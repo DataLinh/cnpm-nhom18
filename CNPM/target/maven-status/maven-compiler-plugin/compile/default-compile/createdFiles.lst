@@ -1,0 +1,4 @@
+com\mycompany\cnpm\entities\User.class
+com\mycompany\cnpm\until\HibernateUtil.class
+com\mycompany\cnpm\controller\LoginController.class
+com\mycompany\cnpm\dao\UserDAO.class

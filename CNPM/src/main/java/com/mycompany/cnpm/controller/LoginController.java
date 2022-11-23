@@ -51,11 +51,21 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if (loginDao.validate(username, password)) {
+        if (loginDao.validate(username, password).equals("Admin")) {            
             RequestDispatcher dispatcher = request.getRequestDispatcher("Admin.jsp");
             dispatcher.forward(request, response);
-        } else {
-            throw new Exception("Login not successful..");
-        }
+        }else if (loginDao.validate(username, password).equals("GiangVien")) {            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("GiangVien.jsp");
+            dispatcher.forward(request, response);
+        }else if (loginDao.validate(username, password).equals("TruongBoMon")) {            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("TruongBoMon.jsp");
+            dispatcher.forward(request, response);
+        }else if (loginDao.validate(username, password).equals("SinhVien")) {            
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SinhVien.jsp");
+            dispatcher.forward(request, response);
+        }else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("loginfail.jsp");
+            dispatcher.forward(request, response);
+        } 
     }
 }

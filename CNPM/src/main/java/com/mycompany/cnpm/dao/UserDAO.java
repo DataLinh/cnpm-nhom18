@@ -18,7 +18,7 @@ import org.hibernate.query.Query;
  */
 public class UserDAO {
 
-	public boolean validate(String userName, String password) {
+	public String validate(String userName, String password) {
 
 		Transaction transaction = null;
 		User user = null;
@@ -26,11 +26,11 @@ public class UserDAO {
 			// start a transaction
 			transaction = session.beginTransaction();
 			// get an user object
-			user = (User) session.createQuery("FROM User U WHERE U.username = :userName").setParameter("userName", userName)
+			user = (User) session.createQuery("FROM User AS U WHERE U.username = :userName").setParameter("userName", userName)
 					.uniqueResult();
 			
 			if(user != null && user.getPassword().equals(password)) {
-				return true;
+				return user.getRole();
 			}
 			// commit transaction
 			transaction.commit();
@@ -40,7 +40,7 @@ public class UserDAO {
 			}
 			e.printStackTrace();
 		}
-		return false;
+		return "";
 	}
 
 }
