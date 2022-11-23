@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : b8of1k7Mep
- Source Server Type    : MySQL
- Source Server Version : 80013
- Source Host           : remotemysql.com:3306
- Source Schema         : b8of1k7Mep
-
- Target Server Type    : MySQL
- Target Server Version : 80013
- File Encoding         : 65001
-
- Date: 21/11/2022 23:16:44
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -101,17 +85,13 @@ CREATE TABLE `UserRoles`  (
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users`  (
   `Id` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Email` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `EmailConfirmed` tinyint(4) NOT NULL,
-  `PasswordHash` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `SecurityStamp` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `PhoneNumber` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
-  `PhoneNumberConfirmed` tinyint(4) NOT NULL,
-  `TwoFactorEnabled` tinyint(4) NOT NULL,
-  `LockoutEndDateUtc` datetime NULL DEFAULT NULL,
-  `LockoutEnabled` tinyint(4) NOT NULL,
-  `AccessFailedCount` int(11) NOT NULL,
-  `UserName` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `fullname` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `email` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `birthday` datetime NULL DEFAULT NULL,
+  `schoolyear` int(11) NOT NULL,
+  `phone` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
