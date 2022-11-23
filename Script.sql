@@ -85,7 +85,7 @@ CREATE TABLE `UserRoles`  (
 DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users`  (
   `Id` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `username` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `fullname` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `email` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
