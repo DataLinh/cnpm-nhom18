@@ -1,4 +1,8 @@
-com\mycompany\cnpm\entities\User.class
-com\mycompany\cnpm\until\HibernateUtil.class
+com\mycompany\cnpm\dao\UserDao.class
 com\mycompany\cnpm\controller\LoginController.class
-com\mycompany\cnpm\dao\UserDAO.class
+com\mycompany\cnpm\service\impl\LoginServiceImpl.class
+com\mycompany\cnpm\until\HibernateUtil.class
+com\mycompany\cnpm\dao\impl\UserDaoImpl.class
+com\mycompany\cnpm\service\LoginService.class
+com\mycompany\cnpm\entities\User.class
+com\mycompany\cnpm\controller\WaitingController.class

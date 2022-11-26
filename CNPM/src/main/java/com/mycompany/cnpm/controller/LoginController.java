@@ -10,62 +10,83 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.mycompany.cnpm.dao.UserDAO;
+import com.mycompany.cnpm.dao.UserDao;
+import com.mycompany.cnpm.dao.impl.UserDaoImpl;
 import com.mycompany.cnpm.entities.User;
+import com.mycompany.cnpm.service.LoginService;
+import com.mycompany.cnpm.service.impl.LoginServiceImpl;
 import com.mycompany.cnpm.until.HibernateUtil;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Linh
  */
-@WebServlet("/login")
+@WebServlet("/Login")
 public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private UserDAO loginDao;
+    private UserDao loginDao;
 
     public void init() {
-        loginDao = new UserDAO();
+        loginDao = new UserDaoImpl();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        response.sendRedirect("login.jsp");
+        HttpSession session = req.getSession(false);
+        if (session != null && session.getAttribute("account") != null) {
+            resp.sendRedirect(req.getContextPath() + "/Waiting");
+            return;
+        }
+        // Check cookie
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("username")) {
+                    session = req.getSession(true);
+                    session.setAttribute("username", cookie.getValue());
+                    resp.sendRedirect(req.getContextPath() + "/Waiting");
+                    return;
+                }
+            }
+        }
+
+        req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        try {
-            authenticate(request, response);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        String username = req.getParameter("username");
+
+        String password = req.getParameter("password");
+
+        String alertMsg = "";
+
+        if (username.isEmpty() || password.isEmpty()) {
+            alertMsg = "Tài khoản mật khẩu không được để trống!";
+            req.setAttribute("alert", alertMsg);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            return;
+        }
+
+        LoginService service = new LoginServiceImpl();
+
+        User user = service.login(username, password);
+
+        if (user != null) {
+            HttpSession session = req.getSession(true);
+            session.setAttribute("account", user);
+
+            resp.sendRedirect(req.getContextPath() + "/Waiting");
+        } else {
+            alertMsg = "Tài khoản hoặc mật khẩu không đúng!";
+            req.setAttribute("alert", alertMsg);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 
-    private void authenticate(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-
-        if (loginDao.validate(username, password).equals("Admin")) {            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("Admin.jsp");
-            dispatcher.forward(request, response);
-        }else if (loginDao.validate(username, password).equals("GiangVien")) {            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("GiangVien.jsp");
-            dispatcher.forward(request, response);
-        }else if (loginDao.validate(username, password).equals("TruongBoMon")) {            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("TruongBoMon.jsp");
-            dispatcher.forward(request, response);
-        }else if (loginDao.validate(username, password).equals("SinhVien")) {            
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SinhVien.jsp");
-            dispatcher.forward(request, response);
-        }else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("loginfail.jsp");
-            dispatcher.forward(request, response);
-        } 
-    }
 }
