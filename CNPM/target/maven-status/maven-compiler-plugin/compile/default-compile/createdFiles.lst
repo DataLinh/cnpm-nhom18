@@ -1,8 +1,17 @@
 com\mycompany\cnpm\dao\UserDao.class
 com\mycompany\cnpm\controller\LoginController.class
+com\mycompany\cnpm\dao\DeTaiDao.class
 com\mycompany\cnpm\service\impl\LoginServiceImpl.class
 com\mycompany\cnpm\until\HibernateUtil.class
+com\mycompany\cnpm\controller\GiangVienController.class
 com\mycompany\cnpm\dao\impl\UserDaoImpl.class
+com\mycompany\cnpm\entities\DeTai.class
+com\mycompany\cnpm\controller\AdminController.class
 com\mycompany\cnpm\service\LoginService.class
+com\mycompany\cnpm\controller\SinhVienController.class
 com\mycompany\cnpm\entities\User.class
+com\mycompany\cnpm\service\impl\DeTaiServiceImpl.class
+com\mycompany\cnpm\service\DeTaiService.class
+com\mycompany\cnpm\controller\TruongBoMonController.class
 com\mycompany\cnpm\controller\WaitingController.class
+com\mycompany\cnpm\dao\impl\DeTaiDaoImpl.class

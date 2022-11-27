@@ -1,8 +1,9 @@
 package com.mycompany.cnpm.entities;
 
-
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Users")
@@ -35,6 +36,14 @@ public class User {
 
     @Column
     private String role;
+
+    @OneToOne
+    @JoinColumn(name = "maNganh")
+    private Nganh nganh;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "maHoiDong")
+    private HoiDong hoiDong;
 
     /**
      * @return the username
@@ -161,4 +170,34 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
+
+    /**
+     * @return the nganh
+     */
+    public Nganh getNganh() {
+        return nganh;
+    }
+
+    /**
+     * @param nganh the nganh to set
+     */
+    public void setNganh(Nganh nganh) {
+        this.nganh = nganh;
+    }
+
+    /**
+     * @return the hoiDong
+     */
+    public HoiDong getHoiDong() {
+        return hoiDong;
+    }
+
+    /**
+     * @param hoiDong the hoiDong to set
+     */
+    public void setHoiDong(HoiDong hoiDong) {
+        this.hoiDong = hoiDong;
+    }
+
+
 }

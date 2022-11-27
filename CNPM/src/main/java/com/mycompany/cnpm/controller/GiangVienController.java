@@ -15,11 +15,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Linh
  */
-@WebServlet("/GiangVien")    
+@WebServlet("/GiangVien")
 public class GiangVienController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("GiangVien.jsp").forward(req, resp);
     }
+  
 }

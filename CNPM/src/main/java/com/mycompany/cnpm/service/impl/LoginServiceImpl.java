@@ -14,7 +14,8 @@ import com.mycompany.cnpm.service.LoginService;
  * @author Linh
  */
 public class LoginServiceImpl implements LoginService {
-	UserDao userDao = new UserDaoImpl();
+
+    UserDao userDao = new UserDaoImpl();
 
     @Override
     public User login(String username, String password) {

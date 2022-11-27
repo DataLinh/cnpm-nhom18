@@ -33,7 +33,7 @@ public class WaitingController extends HttpServlet {
             } else if (u.getRole().equals("GiangVien")) {
                 resp.sendRedirect(req.getContextPath() + "/GiangVien");
             } else if (u.getRole().equals("TruongBoMon")) {
-                resp.sendRedirect(req.getContextPath() + "TruongBoMon");
+                resp.sendRedirect(req.getContextPath() + "/TruongBoMon");
             } 
         } else {
             resp.sendRedirect(req.getContextPath() + "/Login");

@@ -4,6 +4,10 @@
  */
 package com.mycompany.cnpm.until;
 
+import com.mycompany.cnpm.entities.DeTai;
+import com.mycompany.cnpm.entities.HoiDong;
+import com.mycompany.cnpm.entities.LoaiDeTai;
+import com.mycompany.cnpm.entities.Nganh;
 import com.mycompany.cnpm.entities.User;
 import jdk.nashorn.internal.runtime.UserAccessorProperty;
 import org.hibernate.SessionFactory;
@@ -24,6 +28,11 @@ public class HibernateUtil {
         conf.configure("hibernate.cfg.xml");
 
         conf.addAnnotatedClass(User.class);
+        conf.addAnnotatedClass(DeTai.class);
+        conf.addAnnotatedClass(LoaiDeTai.class);
+        conf.addAnnotatedClass(Nganh.class);
+        
+        conf.addAnnotatedClass(HoiDong.class);
         
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
 
