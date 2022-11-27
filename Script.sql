@@ -9,7 +9,7 @@ CREATE TABLE `LoaiDeTai`  (
   `maLoaiDeTai` varchar(255) NOT NULL,
   `tenLoaiDeTai` varchar(255) NULL,
   `hocKy` varchar(255) NULL,
-  `Nam` varchar(255) NULL,
+  `nam` varchar(255) NULL,
   `maNganh` varchar(255) NULL,
   PRIMARY KEY (`maLoaiDeTai`),
   INDEX `fk_loaiDeTai_Nganh`(`maNganh`),
