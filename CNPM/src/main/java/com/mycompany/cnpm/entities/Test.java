@@ -23,7 +23,7 @@ public class Test {
 //            Discount d = session.get(Discount.class, 2);
 //            System.out.println(d.getName());
 //
-            Set<DeTai> detai =   (Set<DeTai>) session.createQuery("FROM DeTai").list();
+            List<DeTai> detai =  session.createQuery("FROM DeTai").list();
             System.out.println(detai);
 
             session.close();

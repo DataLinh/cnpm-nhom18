@@ -74,13 +74,11 @@ public class LoginController extends HttpServlet {
         }
 
         LoginService service = new LoginServiceImpl();
-
         User user = service.login(username, password);
 
         if (user != null) {
             HttpSession session = req.getSession(true);
             session.setAttribute("account", user);
-
             resp.sendRedirect(req.getContextPath() + "/Waiting");
         } else {
             alertMsg = "Tài khoản hoặc mật khẩu không đúng!";

@@ -16,10 +16,9 @@
         <c:forEach items="${deTai}" var ="d">
         <tr> 
             <td> ${d.maDeTai} </td>
-            <td> ${d.gvHuongDan} </td>
-            <td> PC </td>        
+            <td> ${d.gvHuongDan.fullname} </td>
         </tr>
         </c:forEach>
 
-    </body>
+</body>
 </html>

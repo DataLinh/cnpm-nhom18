@@ -25,7 +25,7 @@ public class DeTaiDaoImpl implements DeTaiDao {
         List<DeTai> deTai = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
            
-            deTai= (List<DeTai>) (DeTai) session.createQuery("FROM DeTai").list();            
+            deTai=  session.createQuery("FROM DeTai").list();            
         } catch (Exception e) {
             e.printStackTrace();
         }

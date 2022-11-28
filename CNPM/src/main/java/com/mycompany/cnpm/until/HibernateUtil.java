@@ -27,12 +27,16 @@ public class HibernateUtil {
         Configuration conf = new Configuration();
         conf.configure("hibernate.cfg.xml");
 
-        conf.addAnnotatedClass(User.class);
-        conf.addAnnotatedClass(DeTai.class);
         conf.addAnnotatedClass(LoaiDeTai.class);
+        
+        
         conf.addAnnotatedClass(Nganh.class);
         
+        
+        
         conf.addAnnotatedClass(HoiDong.class);
+        conf.addAnnotatedClass(User.class);
+        conf.addAnnotatedClass(DeTai.class);
         
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
 

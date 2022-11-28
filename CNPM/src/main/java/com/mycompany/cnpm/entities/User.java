@@ -45,6 +45,8 @@ public class User {
     @JoinColumn(name = "maHoiDong")
     private HoiDong hoiDong;
 
+    public User(){}
+    
     /**
      * @return the username
      */
