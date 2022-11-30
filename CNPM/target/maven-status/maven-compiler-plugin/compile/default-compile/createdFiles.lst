@@ -11,6 +11,7 @@ com\mycompany\cnpm\entities\DeTai.class
 com\mycompany\cnpm\controller\AdminController.class
 com\mycompany\cnpm\service\LoginService.class
 com\mycompany\cnpm\controller\SinhVienController.class
+com\mycompany\cnpm\filter\PhanQuyen.class
 com\mycompany\cnpm\entities\LoaiDeTai.class
 com\mycompany\cnpm\entities\User.class
 com\mycompany\cnpm\service\impl\DeTaiServiceImpl.class

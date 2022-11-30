@@ -17,6 +17,7 @@
         <tr> 
             <td> ${d.maDeTai} </td>
             <td> ${d.gvHuongDan.fullname} </td>
+            <td> ${account.role}
         </tr>
         </c:forEach>
 

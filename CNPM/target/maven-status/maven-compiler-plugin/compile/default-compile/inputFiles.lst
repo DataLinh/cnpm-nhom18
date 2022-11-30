@@ -17,5 +17,6 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entiti
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\SinhVienController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\GiangVienController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\impl\DeTaiDaoImpl.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\filter\PhanQuyen.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\DeTai.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\until\HibernateUtil.java
