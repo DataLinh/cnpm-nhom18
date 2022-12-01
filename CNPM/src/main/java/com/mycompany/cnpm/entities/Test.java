@@ -4,6 +4,10 @@
  */
 package com.mycompany.cnpm.entities;
 
+import com.mycompany.cnpm.dao.DeTaiDao;
+import com.mycompany.cnpm.dao.UserDao;
+import com.mycompany.cnpm.dao.impl.DeTaiDaoImpl;
+import com.mycompany.cnpm.dao.impl.UserDaoImpl;
 import com.mycompany.cnpm.until.HibernateUtil;
 import java.util.List;
 import java.util.Set;
@@ -23,8 +27,8 @@ public class Test {
 //            Discount d = session.get(Discount.class, 2);
 //            System.out.println(d.getName());
 //
-            List<DeTai> detai =  session.createQuery("FROM DeTai").list();
-            System.out.println(detai);
+    DeTaiDao deTaiDao = new DeTaiDaoImpl();
+            deTaiDao.themGVPB("DT004", "3");
 
             session.close();
         }

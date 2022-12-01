@@ -29,10 +29,10 @@ import javax.servlet.http.HttpSession;
 public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private UserDao loginDao;
+    private LoginService loginService;
 
     public void init() {
-        loginDao = new UserDaoImpl();
+        loginService = new LoginServiceImpl();
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -73,8 +73,7 @@ public class LoginController extends HttpServlet {
             return;
         }
 
-        LoginService service = new LoginServiceImpl();
-        User user = service.login(username, password);
+        User user = loginService.login(username, password);
 
         if (user != null) {
             HttpSession session = req.getSession(true);

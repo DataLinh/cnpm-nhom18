@@ -7,6 +7,7 @@ package com.mycompany.cnpm.dao.impl;
 import com.mycompany.cnpm.dao.UserDao;
 import com.mycompany.cnpm.entities.User;
 import com.mycompany.cnpm.until.HibernateUtil;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -17,7 +18,7 @@ import org.hibernate.Transaction;
 public class UserDaoImpl implements UserDao {
 
     @Override
-    public User login(String userName, String password) {        
+    public User login(String userName, String password) {
         Transaction transaction = null;
         User user = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
@@ -39,6 +40,17 @@ public class UserDaoImpl implements UserDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<User> getAllGiangVien() {
+        List<User> user = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+        user = session.createQuery("FROM User AS U WHERE U.role = 'GiangVien'").list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
 }

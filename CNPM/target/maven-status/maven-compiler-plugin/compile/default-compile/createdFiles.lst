@@ -17,6 +17,7 @@ com\mycompany\cnpm\entities\User.class
 com\mycompany\cnpm\service\impl\DeTaiServiceImpl.class
 com\mycompany\cnpm\entities\HoiDong.class
 com\mycompany\cnpm\service\DeTaiService.class
+com\mycompany\cnpm\controller\DangKyGiangVienController.class
 com\mycompany\cnpm\controller\TruongBoMonController.class
 com\mycompany\cnpm\controller\WaitingController.class
 com\mycompany\cnpm\dao\impl\DeTaiDaoImpl.class

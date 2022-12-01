@@ -5,6 +5,7 @@
 package com.mycompany.cnpm.service;
 
 import com.mycompany.cnpm.entities.DeTai;
+import com.mycompany.cnpm.entities.User;
 import java.util.List;
 
 /**
@@ -14,5 +15,9 @@ import java.util.List;
 public interface DeTaiService {
 
     List<DeTai> getAllDeTai();
+
+    void themGVPB(String maDeTai, String maGiangVien);
+
+    List<User> getAllGiangVien();
 
 }

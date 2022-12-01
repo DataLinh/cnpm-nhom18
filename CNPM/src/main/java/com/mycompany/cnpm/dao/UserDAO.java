@@ -4,7 +4,9 @@
  */
 package com.mycompany.cnpm.dao;
 
+import com.mycompany.cnpm.entities.DeTai;
 import com.mycompany.cnpm.entities.User;
+import java.util.List;
 
 /**
  *
@@ -13,5 +15,7 @@ import com.mycompany.cnpm.entities.User;
 public interface UserDao {
 
     User login(String userName, String password);
+
+    List<User> getAllGiangVien();
 
 }

@@ -13,4 +13,6 @@ import java.util.List;
  */
 public interface DeTaiDao {
     List<DeTai> getAll();
+    
+    void themGVPB(String maDeTai, String maGiangVien);
 }
