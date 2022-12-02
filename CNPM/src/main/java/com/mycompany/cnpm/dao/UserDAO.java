@@ -18,4 +18,5 @@ public interface UserDao {
 
     List<User> getAllGiangVien();
 
+    void themHoiDong(String userId,String hoiDongId);
 }

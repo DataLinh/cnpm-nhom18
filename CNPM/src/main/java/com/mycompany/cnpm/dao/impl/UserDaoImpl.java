@@ -6,6 +6,7 @@ package com.mycompany.cnpm.dao.impl;
 
 import com.mycompany.cnpm.dao.UserDao;
 import com.mycompany.cnpm.entities.User;
+import com.mycompany.cnpm.entities.HoiDong;
 import com.mycompany.cnpm.until.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
@@ -51,6 +52,19 @@ public class UserDaoImpl implements UserDao {
             e.printStackTrace();
         }
         return user;
+    }
+
+    @Override
+    public void themHoiDong(String userId, String hoiDongId) {
+        User user = null;
+      try (Session session = HibernateUtil.getFactory().openSession()) {
+         user = session.get(User.class, userId);
+         HoiDong hoiDong = session.get(HoiDong.class, hoiDongId);
+         user.setHoiDong(hoiDong);
+         session.update(user);
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
     }
 
 }
