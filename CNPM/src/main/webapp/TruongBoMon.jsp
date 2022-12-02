@@ -15,11 +15,13 @@
     <body>
         <h1>Trưởng bộ môn </h1>
         <table>
+            <th>Mã đề tài</th>
+            <th>GVHD</th>
+            <th>GV Phản Biện</th>
             <c:forEach items="${deTai}" var ="d">
                 <tr> 
                     <td> ${d.maDeTai} </td>
                     <td> ${d.gvHuongDan.fullname} </td>
-                    <td> ${account.role}</td>  
                     <td>
                         <c:if test="${d.gvPhanBien!=null}">
                             ${d.gvPhanBien.fullname}

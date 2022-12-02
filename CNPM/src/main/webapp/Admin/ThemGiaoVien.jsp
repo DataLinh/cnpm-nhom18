@@ -13,7 +13,7 @@
         <h1>Thêm giảng viên cho ${tenHoiDong}</h1>
         <table>
             <th>Tên giảng viên</th>
-            <th>Khoa</th>
+            <th>Ngành</th>
             <th></th>
             <th></th>
             
