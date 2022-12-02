@@ -13,10 +13,15 @@
         <title>DKGV</title>
     </head>
     <body>
-        <h1>Đăng ký giảng viên!</h1>
-
+        <a href="${pageContext.request.contextPath }"> Về trang chủ</a>
+        <h1>Thêm giảng viên </h1>
         <table>
-            <c:forEach items="${giangVien}" var ="gv">
+            <th>Tên giảng viên</th>
+            <th>Khoa</th>
+            <th></th>
+            <th></th>
+            
+                <c:forEach items="${giangVien}" var ="gv">
                 <tr> 
                     <td> ${gv.fullname} </td>
                     <td> ${gv.nganh.tenNganh} </td>     

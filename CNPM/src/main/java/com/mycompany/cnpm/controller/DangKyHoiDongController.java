@@ -74,7 +74,7 @@ public class DangKyHoiDongController extends HttpServlet {
 
     protected void doGet_themGV(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        req.setAttribute("giangViens", giangVienService.allGiangVien());
+            req.setAttribute("giangViens", giangVienService.allGiangVien());
         req.getRequestDispatcher("ThemGiaoVien.jsp").forward(req, resp);
 
     }

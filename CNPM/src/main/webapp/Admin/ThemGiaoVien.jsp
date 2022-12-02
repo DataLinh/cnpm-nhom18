@@ -16,6 +16,7 @@
             <th>Khoa</th>
             <th></th>
             <th></th>
+            
                 <c:forEach items="${giangViens}" var ="gv">
                 <tr> 
                     <td> ${gv.fullname} </td>

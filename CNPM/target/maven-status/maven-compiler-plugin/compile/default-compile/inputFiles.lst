@@ -2,7 +2,6 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entiti
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\DeTaiService.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\LoginController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\DeTaiDao.java
-C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\GiangVienDao.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\HoiDongService.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\LoginServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\LoaiDeTai.java
@@ -19,7 +18,6 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\servic
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\HoiDongServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\DeTaiServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\UserDao.java
-C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\impl\GiangVienDaoImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\HoiDong.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\HoiDongDao.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\WaitingController.java

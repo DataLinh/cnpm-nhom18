@@ -19,7 +19,7 @@ public class GiangVienServiceImpl implements GiangVienService {
     UserDao giangVienDao = new UserDaoImpl();
 
     @Override
-    public List<User> allGiangVien() {
+     public List<User> allGiangVien() {
         return giangVienDao.getAllGiangVien();
     }
 
