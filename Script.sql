@@ -1,34 +1,34 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : b8of1k7Mep
+ Source Server         : Web
  Source Server Type    : MySQL
- Source Server Version : 80013
- Source Host           : remotemysql.com:3306
- Source Schema         : b8of1k7Mep
+ Source Server Version : 80031
+ Source Host           : localhost:3306
+ Source Schema         : cnpm
 
  Target Server Type    : MySQL
- Target Server Version : 80013
+ Target Server Version : 80031
  File Encoding         : 65001
 
- Date: 28/11/2022 08:01:52
+ Date: 03/12/2022 10:00:10
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for DeTai
+-- Table structure for detai
 -- ----------------------------
-DROP TABLE IF EXISTS `DeTai`;
-CREATE TABLE `DeTai`  (
-  `maDeTai` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `loaiDeTai` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `maNganh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `gvHuongDan` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `gvPhanBien` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `maSinhVien` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `maHoiDong` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+DROP TABLE IF EXISTS `detai`;
+CREATE TABLE `detai`  (
+  `maDeTai` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `loaiDeTai` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `maNganh` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `gvHuongDan` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `gvPhanBien` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `maSinhVien` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `maHoiDong` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`maDeTai`) USING BTREE,
   INDEX `loaiDeTai`(`loaiDeTai`) USING BTREE,
   INDEX `maNganh`(`maNganh`) USING BTREE,
@@ -38,110 +38,1441 @@ CREATE TABLE `DeTai`  (
   INDEX `maDeTai`(`maDeTai`) USING BTREE,
   INDEX `maDeTai_2`(`maDeTai`) USING BTREE,
   INDEX `DeTai_ibfk_5`(`maSinhVien`) USING BTREE,
-  CONSTRAINT `DeTai_ibfk_1` FOREIGN KEY (`loaiDeTai`) REFERENCES `LoaiDeTai` (`maloaidetai`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `DeTai_ibfk_2` FOREIGN KEY (`maNganh`) REFERENCES `Nganh` (`manganh`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `DeTai_ibfk_3` FOREIGN KEY (`gvHuongDan`) REFERENCES `Users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `DeTai_ibfk_4` FOREIGN KEY (`gvPhanBien`) REFERENCES `Users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `DeTai_ibfk_5` FOREIGN KEY (`maSinhVien`) REFERENCES `Users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `DeTai_ibfk_6` FOREIGN KEY (`maHoiDong`) REFERENCES `HoiDong` (`mahoidong`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+  CONSTRAINT `DeTai_ibfk_1` FOREIGN KEY (`loaiDeTai`) REFERENCES `loaidetai` (`maloaidetai`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `DeTai_ibfk_2` FOREIGN KEY (`maNganh`) REFERENCES `nganh` (`manganh`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `DeTai_ibfk_3` FOREIGN KEY (`gvHuongDan`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `DeTai_ibfk_4` FOREIGN KEY (`gvPhanBien`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `DeTai_ibfk_5` FOREIGN KEY (`maSinhVien`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `DeTai_ibfk_6` FOREIGN KEY (`maHoiDong`) REFERENCES `hoidong` (`mahoidong`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of DeTai
+-- Records of detai
 -- ----------------------------
-INSERT INTO `DeTai` VALUES ('DT001', 'DACNTT', 'CNTT', '2', '3', '4', 'HD2022');
-INSERT INTO `DeTai` VALUES ('DT002', 'KHKT', 'CNTT', '3', '2', '4', 'HD2022');
+INSERT INTO `detai` VALUES ('DT0001', 'UTE00100', '714', '20', NULL, '100', NULL);
+INSERT INTO `detai` VALUES ('DT00010', 'UTE0090', '7140201', '56', NULL, '432', NULL);
+INSERT INTO `detai` VALUES ('DT000100', 'UTE0092', '7140217', '36', NULL, '425', NULL);
+INSERT INTO `detai` VALUES ('DT000101', 'UTE00104', '7220209', '26', NULL, '266', NULL);
+INSERT INTO `detai` VALUES ('DT000102', 'UTE0043', '7210303', '50', NULL, '534', NULL);
+INSERT INTO `detai` VALUES ('DT000103', 'UTE00157', '7140227', '31', NULL, '290', NULL);
+INSERT INTO `detai` VALUES ('DT000104', 'UTE00185', '7210242', '50', NULL, '95', NULL);
+INSERT INTO `detai` VALUES ('DT000105', 'UTE0031', '7220201', '33', NULL, '340', NULL);
+INSERT INTO `detai` VALUES ('DT000106', 'UTE0044', '7220211', '41', NULL, '206', NULL);
+INSERT INTO `detai` VALUES ('DT000107', 'UTE00183', '7210303', '34', NULL, '353', NULL);
+INSERT INTO `detai` VALUES ('DT000108', 'UTE00170', '7140208', '54', NULL, '559', NULL);
+INSERT INTO `detai` VALUES ('DT000109', 'UTE0030', '72290', '15', NULL, '164', NULL);
+INSERT INTO `detai` VALUES ('DT00011', 'UTE0035', '7210203', '32', NULL, '456', NULL);
+INSERT INTO `detai` VALUES ('DT000110', 'UTE00167', '7140209', '21', NULL, '297', NULL);
+INSERT INTO `detai` VALUES ('DT000111', 'UTE00124', '7140246', '32', NULL, '216', NULL);
+INSERT INTO `detai` VALUES ('DT0002', 'UTE00168', '7220205', '41', NULL, '303', NULL);
+INSERT INTO `detai` VALUES ('DT00022', 'UTE0091', '71401', '38', NULL, '539', NULL);
+INSERT INTO `detai` VALUES ('DT00023', 'UTE00182', '7140248', '51', NULL, '295', NULL);
+INSERT INTO `detai` VALUES ('DT00024', 'UTE0065', '7210236', '50', NULL, '583', NULL);
+INSERT INTO `detai` VALUES ('DT00025', 'UTE0082', '7210207', '15', NULL, '447', NULL);
+INSERT INTO `detai` VALUES ('DT00026', 'UTE00169', '7210303', '9', NULL, '539', NULL);
+INSERT INTO `detai` VALUES ('DT00027', 'UTE0047', '7140101', '48', NULL, '244', NULL);
+INSERT INTO `detai` VALUES ('DT00028', 'UTE0051', '7140204', '50', NULL, '134', NULL);
+INSERT INTO `detai` VALUES ('DT00029', 'UTE0084', '72190', '42', NULL, '161', NULL);
+INSERT INTO `detai` VALUES ('DT0003', 'UTE0020', '7220106', '35', NULL, '156', NULL);
+INSERT INTO `detai` VALUES ('DT00030', 'UTE0099', '7210221', '16', NULL, '88', NULL);
+INSERT INTO `detai` VALUES ('DT00031', 'UTE00147', '7140217', '26', NULL, '206', NULL);
+INSERT INTO `detai` VALUES ('DT00032', 'UTE0073', '7220105', '31', NULL, '99', NULL);
+INSERT INTO `detai` VALUES ('DT00033', 'UTE00141', '7210402', '44', NULL, '494', NULL);
+INSERT INTO `detai` VALUES ('DT00034', 'UTE0020', '7220201', '53', NULL, '115', NULL);
+INSERT INTO `detai` VALUES ('DT00035', 'UTE0033', '7140215', '21', NULL, '352', NULL);
+INSERT INTO `detai` VALUES ('DT00036', 'UTE00163', '7220207', '26', NULL, '352', NULL);
+INSERT INTO `detai` VALUES ('DT00037', 'UTE00108', '7210208', '44', NULL, '550', NULL);
+INSERT INTO `detai` VALUES ('DT00038', 'UTE00159', '72101', '9', NULL, '526', NULL);
+INSERT INTO `detai` VALUES ('DT00039', 'UTE00113', '7220112', '9', NULL, '506', NULL);
+INSERT INTO `detai` VALUES ('DT0004', 'UTE0038', '7210103', '9', NULL, '490', NULL);
+INSERT INTO `detai` VALUES ('DT00040', 'UTE0030', '72101', '23', NULL, '335', NULL);
+INSERT INTO `detai` VALUES ('DT00041', 'UTE0075', '71490', '54', NULL, '529', NULL);
+INSERT INTO `detai` VALUES ('DT00042', 'UTE00188', '7210231', '51', NULL, '260', NULL);
+INSERT INTO `detai` VALUES ('DT00043', 'UTE0062', '7210242', '50', NULL, '381', NULL);
+INSERT INTO `detai` VALUES ('DT00044', 'UTE00128', '7220104', '13', NULL, '351', NULL);
+INSERT INTO `detai` VALUES ('DT00045', 'UTE0051', '7210235', '16', NULL, '544', NULL);
+INSERT INTO `detai` VALUES ('DT00046', 'UTE0069', '7140236', '52', NULL, '235', NULL);
+INSERT INTO `detai` VALUES ('DT00047', 'UTE0016', '7140208', '45', NULL, '577', NULL);
+INSERT INTO `detai` VALUES ('DT00048', 'UTE00147', '7220104', '43', NULL, '348', NULL);
+INSERT INTO `detai` VALUES ('DT00049', 'UTE00160', '7210226', '49', NULL, '206', NULL);
+INSERT INTO `detai` VALUES ('DT0005', 'UTE0091', '7140209', '39', NULL, '309', NULL);
+INSERT INTO `detai` VALUES ('DT00050', 'UTE0030', '72101', '22', NULL, '300', NULL);
+INSERT INTO `detai` VALUES ('DT00051', 'UTE0052', '7220101', '15', NULL, '566', NULL);
+INSERT INTO `detai` VALUES ('DT00052', 'UTE00107', '7210406', '45', NULL, '370', NULL);
+INSERT INTO `detai` VALUES ('DT00053', 'UTE00174', '7140201', '30', NULL, '79', NULL);
+INSERT INTO `detai` VALUES ('DT00054', 'UTE00177', '7220210', '57', NULL, '314', NULL);
+INSERT INTO `detai` VALUES ('DT00055', 'UTE00169', '7140225', '29', NULL, '545', NULL);
+INSERT INTO `detai` VALUES ('DT00056', 'UTE00136', '71402', '41', NULL, '345', NULL);
+INSERT INTO `detai` VALUES ('DT00057', 'UTE0060', '7140103', '30', NULL, '386', NULL);
+INSERT INTO `detai` VALUES ('DT00058', 'UTE00146', '7140212', '43', NULL, '158', NULL);
+INSERT INTO `detai` VALUES ('DT00059', 'UTE0093', '7210234', '40', NULL, '280', NULL);
+INSERT INTO `detai` VALUES ('DT0006', 'UTE00133', '7140210', '52', NULL, '543', NULL);
+INSERT INTO `detai` VALUES ('DT00060', 'UTE00132', '7140101', '48', NULL, '475', NULL);
+INSERT INTO `detai` VALUES ('DT00061', 'UTE00100', '7140214', '27', NULL, '190', NULL);
+INSERT INTO `detai` VALUES ('DT00062', 'UTE00124', '714', '54', NULL, '294', NULL);
+INSERT INTO `detai` VALUES ('DT00063', 'UTE00199', '7210225', '46', NULL, '85', NULL);
+INSERT INTO `detai` VALUES ('DT00064', 'UTE0060', '7210235', '28', NULL, '396', NULL);
+INSERT INTO `detai` VALUES ('DT00065', 'UTE00117', '7210403', '27', NULL, '91', NULL);
+INSERT INTO `detai` VALUES ('DT00066', 'UTE00125', '7210227', '56', NULL, '540', NULL);
+INSERT INTO `detai` VALUES ('DT00067', 'UTE00123', '7140207', '8', NULL, '584', NULL);
+INSERT INTO `detai` VALUES ('DT00068', 'UTE0078', '7210221', '14', NULL, '236', NULL);
+INSERT INTO `detai` VALUES ('DT00069', 'UTE00169', '72290', '58', NULL, '129', NULL);
+INSERT INTO `detai` VALUES ('DT0007', 'UTE0097', '7220210', '23', NULL, '263', NULL);
+INSERT INTO `detai` VALUES ('DT00070', 'UTE00175', '7140234', '42', NULL, '227', NULL);
+INSERT INTO `detai` VALUES ('DT00071', 'UTE00134', '7220201', '56', NULL, '233', NULL);
+INSERT INTO `detai` VALUES ('DT00072', 'UTE00134', '7140214', '12', NULL, '63', NULL);
+INSERT INTO `detai` VALUES ('DT00073', 'UTE00163', '7140207', '11', NULL, '367', NULL);
+INSERT INTO `detai` VALUES ('DT00074', 'UTE0084', '7140208', '30', NULL, '445', NULL);
+INSERT INTO `detai` VALUES ('DT00075', 'UTE00186', '7140234', '45', NULL, '362', NULL);
+INSERT INTO `detai` VALUES ('DT00076', 'UTE0087', '7210201', '33', NULL, '239', NULL);
+INSERT INTO `detai` VALUES ('DT00077', 'UTE0058', '7140202', '15', NULL, '283', NULL);
+INSERT INTO `detai` VALUES ('DT00078', 'UTE0047', '7140229', '50', NULL, '303', NULL);
+INSERT INTO `detai` VALUES ('DT00079', 'UTE00117', '7140213', '35', NULL, '486', NULL);
+INSERT INTO `detai` VALUES ('DT0008', 'UTE0048', '7210107', '40', NULL, '274', NULL);
+INSERT INTO `detai` VALUES ('DT00080', 'UTE0057', '7140202', '22', NULL, '158', NULL);
+INSERT INTO `detai` VALUES ('DT00081', 'UTE0048', '7140248', '11', NULL, '99', NULL);
+INSERT INTO `detai` VALUES ('DT00082', 'UTE00197', '7140229', '9', NULL, '235', NULL);
+INSERT INTO `detai` VALUES ('DT00083', 'UTE0076', '722', '23', NULL, '245', NULL);
+INSERT INTO `detai` VALUES ('DT00084', 'UTE00131', '7140103', '54', NULL, '571', NULL);
+INSERT INTO `detai` VALUES ('DT00085', 'UTE0095', '7140212', '24', NULL, '430', NULL);
+INSERT INTO `detai` VALUES ('DT00086', 'UTE003', '7140248', '34', NULL, '123', NULL);
+INSERT INTO `detai` VALUES ('DT00087', 'UTE00190', '7220112', '23', NULL, '499', NULL);
+INSERT INTO `detai` VALUES ('DT00088', 'UTE00168', '7140214', '31', NULL, '473', NULL);
+INSERT INTO `detai` VALUES ('DT00089', 'UTE00198', '7210208', '16', NULL, '492', NULL);
+INSERT INTO `detai` VALUES ('DT0009', 'UTE0052', '7140247', '50', NULL, '86', NULL);
+INSERT INTO `detai` VALUES ('DT00090', 'UTE0067', '722', '8', NULL, '311', NULL);
+INSERT INTO `detai` VALUES ('DT00091', 'UTE00157', '7220209', '21', NULL, '315', NULL);
+INSERT INTO `detai` VALUES ('DT00092', 'UTE00109', '7140210', '60', NULL, '476', NULL);
+INSERT INTO `detai` VALUES ('DT00093', 'UTE005', '72290', '23', NULL, '224', NULL);
+INSERT INTO `detai` VALUES ('DT00094', 'UTE0011', '7140236', '16', NULL, '574', NULL);
+INSERT INTO `detai` VALUES ('DT00095', 'UTE0081', '7220106', '31', NULL, '112', NULL);
+INSERT INTO `detai` VALUES ('DT00096', 'UTE00107', '7140204', '34', NULL, '483', NULL);
+INSERT INTO `detai` VALUES ('DT00097', 'UTE00104', '72202', '39', NULL, '374', NULL);
+INSERT INTO `detai` VALUES ('DT00098', 'UTE00140', '7140227', '17', NULL, '104', NULL);
+INSERT INTO `detai` VALUES ('DT00099', 'UTE0096', '7140235', '8', NULL, '201', NULL);
 
 -- ----------------------------
--- Table structure for HoiDong
+-- Table structure for hoidong
 -- ----------------------------
-DROP TABLE IF EXISTS `HoiDong`;
-CREATE TABLE `HoiDong`  (
-  `maHoiDong` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tenHoiDong` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+DROP TABLE IF EXISTS `hoidong`;
+CREATE TABLE `hoidong`  (
+  `maHoiDong` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tenHoiDong` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`maHoiDong`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of HoiDong
+-- Records of hoidong
 -- ----------------------------
-INSERT INTO `HoiDong` VALUES ('HD2022', 'Hội đồng chấm đồ án 2022');
-INSERT INTO `HoiDong` VALUES ('HDECO', 'HOI DONG KINH TE');
-INSERT INTO `HoiDong` VALUES ('HDKH', 'HD CHẤM NCKH');
+INSERT INTO `hoidong` VALUES ('0', 'Chưa có HĐ');
+INSERT INTO `hoidong` VALUES ('HD1001', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD1008', 'Hội đồng CSV UTE');
+INSERT INTO `hoidong` VALUES ('HD1009', 'Hội đồng CTTH UFM');
+INSERT INTO `hoidong` VALUES ('HD1015', 'Hội đồng CGV RMIT');
+INSERT INTO `hoidong` VALUES ('HD1024', 'Hội đồng CTTH AIN');
+INSERT INTO `hoidong` VALUES ('HD1030', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD1036', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD104', 'Hội đồng TH AIO');
+INSERT INTO `hoidong` VALUES ('HD1046', 'Hội đồng TH TW');
+INSERT INTO `hoidong` VALUES ('HD1048', 'Hội đồng CSV AIN');
+INSERT INTO `hoidong` VALUES ('HD1049', 'Hội đồng TH AIN');
+INSERT INTO `hoidong` VALUES ('HD1059', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD1069', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD1075', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD1078', 'Hội đồng TH TW');
+INSERT INTO `hoidong` VALUES ('HD1087', 'Hội đồng CGV TW');
+INSERT INTO `hoidong` VALUES ('HD1090', 'Hội đồng CTHS RMIT');
+INSERT INTO `hoidong` VALUES ('HD1094', 'Hội đồng CSV UIT');
+INSERT INTO `hoidong` VALUES ('HD1095', 'Hội đồng CGS UIT');
+INSERT INTO `hoidong` VALUES ('HD11', 'Hội đồng CTS AIN');
+INSERT INTO `hoidong` VALUES ('HD1103', 'Hội đồng CGV RMIT');
+INSERT INTO `hoidong` VALUES ('HD1113', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD1119', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD1123', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD1127', 'Hội đồng CTTH AIN');
+INSERT INTO `hoidong` VALUES ('HD1134', 'Hội đồng CSV UFM');
+INSERT INTO `hoidong` VALUES ('HD1137', 'Hội đồng CGV UFM');
+INSERT INTO `hoidong` VALUES ('HD114', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD1144', 'Hội đồng CTTH TW');
+INSERT INTO `hoidong` VALUES ('HD1146', 'Hội đồng CGV UFM');
+INSERT INTO `hoidong` VALUES ('HD1147', 'Hội đồng CGV UIT');
+INSERT INTO `hoidong` VALUES ('HD1156', 'Hội đồng CTS AIN');
+INSERT INTO `hoidong` VALUES ('HD116', 'Hội đồng CSV UFM');
+INSERT INTO `hoidong` VALUES ('HD1164', 'Hội đồng CTS RMIT');
+INSERT INTO `hoidong` VALUES ('HD117', 'Hội đồng CGS UIT');
+INSERT INTO `hoidong` VALUES ('HD1174', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD1176', 'Hội đồng TH AIN');
+INSERT INTO `hoidong` VALUES ('HD1180', 'Hội đồng CTTH UIT');
+INSERT INTO `hoidong` VALUES ('HD1188', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD1197', 'Hội đồng CTHS UFM');
+INSERT INTO `hoidong` VALUES ('HD1199', 'Hội đồng CSV AIN');
+INSERT INTO `hoidong` VALUES ('HD1207', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD1210', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD1220', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD1225', 'Hội đồng CSV TW');
+INSERT INTO `hoidong` VALUES ('HD1226', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD123', 'Hội đồng CTS UFM');
+INSERT INTO `hoidong` VALUES ('HD1232', 'Hội đồng CTTH RMIT');
+INSERT INTO `hoidong` VALUES ('HD1234', 'Hội đồng CSV AIO');
+INSERT INTO `hoidong` VALUES ('HD124', 'Hội đồng CTS UFM');
+INSERT INTO `hoidong` VALUES ('HD131', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD136', 'Hội đồng TH UFM');
+INSERT INTO `hoidong` VALUES ('HD146', 'Hội đồng TH AIO');
+INSERT INTO `hoidong` VALUES ('HD152', 'Hội đồng CSV AIN');
+INSERT INTO `hoidong` VALUES ('HD158', 'Hội đồng CTS RMIT');
+INSERT INTO `hoidong` VALUES ('HD161', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD167', 'Hội đồng CTTH AIO');
+INSERT INTO `hoidong` VALUES ('HD171', 'Hội đồng CGS TW');
+INSERT INTO `hoidong` VALUES ('HD176', 'Hội đồng CSV AIN');
+INSERT INTO `hoidong` VALUES ('HD186', 'Hội đồng CTTH RMIT');
+INSERT INTO `hoidong` VALUES ('HD190', 'Hội đồng CGV UFM');
+INSERT INTO `hoidong` VALUES ('HD197', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD201', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD207', 'Hội đồng CTS RMIT');
+INSERT INTO `hoidong` VALUES ('HD21', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD211', 'Hội đồng CGS UFM');
+INSERT INTO `hoidong` VALUES ('HD221', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD229', 'Hội đồng TH TW');
+INSERT INTO `hoidong` VALUES ('HD236', 'Hội đồng CGS UTE');
+INSERT INTO `hoidong` VALUES ('HD237', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD243', 'Hội đồng CTS UTE');
+INSERT INTO `hoidong` VALUES ('HD248', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD257', 'Hội đồng CSV AIO');
+INSERT INTO `hoidong` VALUES ('HD26', 'Hội đồng CTHS RMIT');
+INSERT INTO `hoidong` VALUES ('HD264', 'Hội đồng TH RMIT');
+INSERT INTO `hoidong` VALUES ('HD271', 'Hội đồng CTTH UIT');
+INSERT INTO `hoidong` VALUES ('HD273', 'Hội đồng TH AIO');
+INSERT INTO `hoidong` VALUES ('HD274', 'Hội đồng CTS AIN');
+INSERT INTO `hoidong` VALUES ('HD282', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD292', 'Hội đồng CTTH UFM');
+INSERT INTO `hoidong` VALUES ('HD296', 'Hội đồng CTS RMIT');
+INSERT INTO `hoidong` VALUES ('HD306', 'Hội đồng CTS UFM');
+INSERT INTO `hoidong` VALUES ('HD316', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD319', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD323', 'Hội đồng CTHS UFM');
+INSERT INTO `hoidong` VALUES ('HD329', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD332', 'Hội đồng TH UTE');
+INSERT INTO `hoidong` VALUES ('HD338', 'Hội đồng CTTH RMIT');
+INSERT INTO `hoidong` VALUES ('HD340', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD35', 'Hội đồng CGS UTE');
+INSERT INTO `hoidong` VALUES ('HD350', 'Hội đồng CTTH AIN');
+INSERT INTO `hoidong` VALUES ('HD353', 'Hội đồng CSV AIO');
+INSERT INTO `hoidong` VALUES ('HD360', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD362', 'Hội đồng CSV TW');
+INSERT INTO `hoidong` VALUES ('HD365', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD368', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD369', 'Hội đồng CGS UFM');
+INSERT INTO `hoidong` VALUES ('HD371', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD375', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD378', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD379', 'Hội đồng CTS UFM');
+INSERT INTO `hoidong` VALUES ('HD383', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD386', 'Hội đồng TH UTE');
+INSERT INTO `hoidong` VALUES ('HD395', 'Hội đồng CSV UIT');
+INSERT INTO `hoidong` VALUES ('HD405', 'Hội đồng CTTH AIO');
+INSERT INTO `hoidong` VALUES ('HD410', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD418', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD426', 'Hội đồng TH AIN');
+INSERT INTO `hoidong` VALUES ('HD43', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD435', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD438', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD439', 'Hội đồng TH UFM');
+INSERT INTO `hoidong` VALUES ('HD44', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD448', 'Hội đồng CTTH UTE');
+INSERT INTO `hoidong` VALUES ('HD455', 'Hội đồng CGS TW');
+INSERT INTO `hoidong` VALUES ('HD456', 'Hội đồng CTTH AIN');
+INSERT INTO `hoidong` VALUES ('HD466', 'Hội đồng TH UTE');
+INSERT INTO `hoidong` VALUES ('HD468', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD47', 'Hội đồng CGS UIT');
+INSERT INTO `hoidong` VALUES ('HD477', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD487', 'Hội đồng TH UFM');
+INSERT INTO `hoidong` VALUES ('HD493', 'Hội đồng CTTH UIT');
+INSERT INTO `hoidong` VALUES ('HD498', 'Hội đồng CTHS UIT');
+INSERT INTO `hoidong` VALUES ('HD505', 'Hội đồng CTTH UIT');
+INSERT INTO `hoidong` VALUES ('HD515', 'Hội đồng CTHS RMIT');
+INSERT INTO `hoidong` VALUES ('HD520', 'Hội đồng CTHS UTE');
+INSERT INTO `hoidong` VALUES ('HD524', 'Hội đồng CTTH TW');
+INSERT INTO `hoidong` VALUES ('HD525', 'Hội đồng CGV RMIT');
+INSERT INTO `hoidong` VALUES ('HD533', 'Hội đồng CSV UIT');
+INSERT INTO `hoidong` VALUES ('HD54', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD543', 'Hội đồng CGS AIN');
+INSERT INTO `hoidong` VALUES ('HD552', 'Hội đồng CTTH AIN');
+INSERT INTO `hoidong` VALUES ('HD555', 'Hội đồng CGV UFM');
+INSERT INTO `hoidong` VALUES ('HD56', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD565', 'Hội đồng CTS RMIT');
+INSERT INTO `hoidong` VALUES ('HD570', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD575', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD58', 'Hội đồng CTHS RMIT');
+INSERT INTO `hoidong` VALUES ('HD583', 'Hội đồng CTS TW');
+INSERT INTO `hoidong` VALUES ('HD592', 'Hội đồng CGS AIN');
+INSERT INTO `hoidong` VALUES ('HD598', 'Hội đồng TH RMIT');
+INSERT INTO `hoidong` VALUES ('HD608', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD609', 'Hội đồng CSV TW');
+INSERT INTO `hoidong` VALUES ('HD616', 'Hội đồng CGV RMIT');
+INSERT INTO `hoidong` VALUES ('HD621', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD626', 'Hội đồng CTTH AIO');
+INSERT INTO `hoidong` VALUES ('HD627', 'Hội đồng CGV UIT');
+INSERT INTO `hoidong` VALUES ('HD634', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD636', 'Hội đồng TH TW');
+INSERT INTO `hoidong` VALUES ('HD639', 'Hội đồng CTTH RMIT');
+INSERT INTO `hoidong` VALUES ('HD647', 'Hội đồng CSV TW');
+INSERT INTO `hoidong` VALUES ('HD656', 'Hội đồng TH TW');
+INSERT INTO `hoidong` VALUES ('HD662', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD667', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD67', 'Hội đồng CTS UFM');
+INSERT INTO `hoidong` VALUES ('HD677', 'Hội đồng CTS TW');
+INSERT INTO `hoidong` VALUES ('HD684', 'Hội đồng CTTH TW');
+INSERT INTO `hoidong` VALUES ('HD689', 'Hội đồng CTTH UFM');
+INSERT INTO `hoidong` VALUES ('HD698', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD702', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD708', 'Hội đồng CTHS UTE');
+INSERT INTO `hoidong` VALUES ('HD718', 'Hội đồng CTHS UFM');
+INSERT INTO `hoidong` VALUES ('HD723', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD728', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD737', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD74', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD747', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD754', 'Hội đồng CTTH TW');
+INSERT INTO `hoidong` VALUES ('HD762', 'Hội đồng TH UIT');
+INSERT INTO `hoidong` VALUES ('HD765', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD766', 'Hội đồng CTTH AIO');
+INSERT INTO `hoidong` VALUES ('HD776', 'Hội đồng CTTH UTE');
+INSERT INTO `hoidong` VALUES ('HD777', 'Hội đồng CGS AIO');
+INSERT INTO `hoidong` VALUES ('HD786', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD792', 'Hội đồng CSV UIT');
+INSERT INTO `hoidong` VALUES ('HD801', 'Hội đồng CSV UTE');
+INSERT INTO `hoidong` VALUES ('HD806', 'Hội đồng CTTH UFM');
+INSERT INTO `hoidong` VALUES ('HD81', 'Hội đồng CTHS UFM');
+INSERT INTO `hoidong` VALUES ('HD816', 'Hội đồng CTHS TW');
+INSERT INTO `hoidong` VALUES ('HD82', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD824', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD826', 'Hội đồng CTTH UFM');
+INSERT INTO `hoidong` VALUES ('HD828', 'Hội đồng CGS UFM');
+INSERT INTO `hoidong` VALUES ('HD833', 'Hội đồng CSV AIO');
+INSERT INTO `hoidong` VALUES ('HD841', 'Hội đồng TH UFM');
+INSERT INTO `hoidong` VALUES ('HD843', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD846', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD854', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD861', 'Hội đồng CGV AIN');
+INSERT INTO `hoidong` VALUES ('HD869', 'Hội đồng CTS AIO');
+INSERT INTO `hoidong` VALUES ('HD874', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD877', 'Hội đồng CTTH UIT');
+INSERT INTO `hoidong` VALUES ('HD887', 'Hội đồng CTS AIN');
+INSERT INTO `hoidong` VALUES ('HD888', 'Hội đồng CGS RMIT');
+INSERT INTO `hoidong` VALUES ('HD898', 'Hội đồng CGV TW');
+INSERT INTO `hoidong` VALUES ('HD903', 'Hội đồng CGV RMIT');
+INSERT INTO `hoidong` VALUES ('HD913', 'Hội đồng CTS AIN');
+INSERT INTO `hoidong` VALUES ('HD918', 'Hội đồng CTHS AIN');
+INSERT INTO `hoidong` VALUES ('HD92', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD927', 'Hội đồng CTHS AIO');
+INSERT INTO `hoidong` VALUES ('HD931', 'Hội đồng CTTH UTE');
+INSERT INTO `hoidong` VALUES ('HD933', 'Hội đồng CGS TW');
+INSERT INTO `hoidong` VALUES ('HD939', 'Hội đồng CGV UTE');
+INSERT INTO `hoidong` VALUES ('HD943', 'Hội đồng CSV UTE');
+INSERT INTO `hoidong` VALUES ('HD945', 'Hội đồng TH RMIT');
+INSERT INTO `hoidong` VALUES ('HD950', 'Hội đồng CGV TW');
+INSERT INTO `hoidong` VALUES ('HD951', 'Hội đồng CTS UIT');
+INSERT INTO `hoidong` VALUES ('HD960', 'Hội đồng CSV RMIT');
+INSERT INTO `hoidong` VALUES ('HD968', 'Hội đồng CTHS UFM');
+INSERT INTO `hoidong` VALUES ('HD97', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD974', 'Hội đồng TH RMIT');
+INSERT INTO `hoidong` VALUES ('HD976', 'Hội đồng CGV AIO');
+INSERT INTO `hoidong` VALUES ('HD983', 'Hội đồng TH AIO');
+INSERT INTO `hoidong` VALUES ('HD992', 'Hội đồng CTS TW');
 
 -- ----------------------------
--- Table structure for LoaiDeTai
+-- Table structure for loaidetai
 -- ----------------------------
-DROP TABLE IF EXISTS `LoaiDeTai`;
-CREATE TABLE `LoaiDeTai`  (
-  `maLoaiDeTai` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tenLoaiDeTai` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `hocKy` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `nam` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+DROP TABLE IF EXISTS `loaidetai`;
+CREATE TABLE `loaidetai`  (
+  `maLoaiDeTai` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tenLoaiDeTai` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `hocKy` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `nam` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`maLoaiDeTai`) USING BTREE,
   INDEX `maLoaiDeTai`(`maLoaiDeTai`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of LoaiDeTai
+-- Records of loaidetai
 -- ----------------------------
-INSERT INTO `LoaiDeTai` VALUES ('DACNTT', 'Đồ án CNTT', '1', '2022');
-INSERT INTO `LoaiDeTai` VALUES ('DAECO', 'Đồ án khoa Kinh Tế', '1 ', '2022');
-INSERT INTO `LoaiDeTai` VALUES ('KHKT', 'Khoa học kỹ thuật', '2 ', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE0010', 'Loại đề tài KHKT trường UTE 828', '1', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00100', 'Loại đề tài SVVN trường UTE 7038', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00101', 'Loại đề tài KHKT trường UTE 7107', '2', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00102', 'Loại đề tài SVVN trường UTE 7176', '3', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE00103', 'Loại đề tài KHKT trường UTE 7245', '2', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00104', 'Loại đề tài KHKT trường UTE 7314', '1', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE00105', 'Loại đề tài Đồ án trường UTE 7383', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00106', 'Loại đề tài Tin học trẻ trường UTE 7452', '2', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE00107', 'Loại đề tài KHKT trường UTE 7521', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00108', 'Loại đề tài KHKT trường UTE 7590', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00109', 'Loại đề tài KHKT trường UTE 7659', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0011', 'Loại đề tài KHKT trường UTE 897', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00110', 'Loại đề tài Đồ án trường UTE 7728', '3', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00111', 'Loại đề tài KHKT trường UTE 7797', '1', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00112', 'Loại đề tài SVVN trường UTE 7866', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE00113', 'Loại đề tài KHKT trường UTE 7935', '2', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE00114', 'Loại đề tài KHKT trường UTE 8004', '1', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00115', 'Loại đề tài Tin học trẻ trường UTE 8073', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00116', 'Loại đề tài SVVN trường UTE 8142', '3', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00117', 'Loại đề tài SVVN trường UTE 8211', '1', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE00118', 'Loại đề tài KHKT trường UTE 8280', '2', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00119', 'Loại đề tài SVVN trường UTE 8349', '2', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0012', 'Loại đề tài SVVN trường UTE 966', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00120', 'Loại đề tài Tin học trẻ trường UTE 8418', '3', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00121', 'Loại đề tài Tin học trẻ trường UTE 8487', '1', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00122', 'Loại đề tài Đồ án trường UTE 8556', '2', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00123', 'Loại đề tài Đồ án trường UTE 8625', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00124', 'Loại đề tài Tin học trẻ trường UTE 8694', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00125', 'Loại đề tài SVVN trường UTE 8763', '1', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00126', 'Loại đề tài Đồ án trường UTE 8832', '1', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00127', 'Loại đề tài Tin học trẻ trường UTE 8901', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00128', 'Loại đề tài Tin học trẻ trường UTE 8970', '1', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00129', 'Loại đề tài Tin học trẻ trường UTE 9039', '2', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE0013', 'Loại đề tài Tin học trẻ trường UTE 1035', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00130', 'Loại đề tài Đồ án trường UTE 9108', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00131', 'Loại đề tài SVVN trường UTE 9177', '2', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00132', 'Loại đề tài KHKT trường UTE 9246', '3', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00133', 'Loại đề tài Đồ án trường UTE 9315', '1', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE00134', 'Loại đề tài SVVN trường UTE 9384', '3', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE00135', 'Loại đề tài SVVN trường UTE 9453', '3', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00136', 'Loại đề tài Tin học trẻ trường UTE 9522', '1', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00137', 'Loại đề tài KHKT trường UTE 9591', '2', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00138', 'Loại đề tài Đồ án trường UTE 9660', '1', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00139', 'Loại đề tài KHKT trường UTE 9729', '1', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0014', 'Loại đề tài KHKT trường UTE 1104', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00140', 'Loại đề tài Tin học trẻ trường UTE 9798', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE00141', 'Loại đề tài Đồ án trường UTE 9867', '2', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00142', 'Loại đề tài KHKT trường UTE 9936', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE00143', 'Loại đề tài Tin học trẻ trường UTE 10005', '3', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE00144', 'Loại đề tài SVVN trường UTE 10074', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00145', 'Loại đề tài Đồ án trường UTE 10143', '3', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00146', 'Loại đề tài SVVN trường UTE 10212', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE00147', 'Loại đề tài KHKT trường UTE 10281', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00148', 'Loại đề tài Tin học trẻ trường UTE 10350', '2', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00149', 'Loại đề tài Đồ án trường UTE 10419', '1', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE0015', 'Loại đề tài Tin học trẻ trường UTE 1173', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00150', 'Loại đề tài SVVN trường UTE 10488', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00151', 'Loại đề tài KHKT trường UTE 10557', '3', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE00152', 'Loại đề tài Đồ án trường UTE 10626', '3', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00153', 'Loại đề tài Tin học trẻ trường UTE 10695', '3', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00154', 'Loại đề tài SVVN trường UTE 10764', '2', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00155', 'Loại đề tài Tin học trẻ trường UTE 10833', '2', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00156', 'Loại đề tài SVVN trường UTE 10902', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE00157', 'Loại đề tài SVVN trường UTE 10971', '1', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00158', 'Loại đề tài Đồ án trường UTE 11040', '1', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00159', 'Loại đề tài SVVN trường UTE 11109', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0016', 'Loại đề tài SVVN trường UTE 1242', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00160', 'Loại đề tài KHKT trường UTE 11178', '1', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00161', 'Loại đề tài Đồ án trường UTE 11247', '2', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00162', 'Loại đề tài Tin học trẻ trường UTE 11316', '3', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00163', 'Loại đề tài KHKT trường UTE 11385', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00164', 'Loại đề tài KHKT trường UTE 11454', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00165', 'Loại đề tài Tin học trẻ trường UTE 11523', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00166', 'Loại đề tài Đồ án trường UTE 11592', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE00167', 'Loại đề tài Tin học trẻ trường UTE 11661', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00168', 'Loại đề tài KHKT trường UTE 11730', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00169', 'Loại đề tài Tin học trẻ trường UTE 11799', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0017', 'Loại đề tài KHKT trường UTE 1311', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00170', 'Loại đề tài KHKT trường UTE 11868', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00171', 'Loại đề tài SVVN trường UTE 11937', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00172', 'Loại đề tài SVVN trường UTE 12006', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00173', 'Loại đề tài Đồ án trường UTE 12075', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE00174', 'Loại đề tài KHKT trường UTE 12144', '1', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00175', 'Loại đề tài SVVN trường UTE 12213', '2', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00176', 'Loại đề tài SVVN trường UTE 12282', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE00177', 'Loại đề tài Đồ án trường UTE 12351', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00178', 'Loại đề tài SVVN trường UTE 12420', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00179', 'Loại đề tài SVVN trường UTE 12489', '1', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE0018', 'Loại đề tài Tin học trẻ trường UTE 1380', '1', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00180', 'Loại đề tài KHKT trường UTE 12558', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00181', 'Loại đề tài Tin học trẻ trường UTE 12627', '1', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00182', 'Loại đề tài Tin học trẻ trường UTE 12696', '3', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00183', 'Loại đề tài Tin học trẻ trường UTE 12765', '1', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE00184', 'Loại đề tài Tin học trẻ trường UTE 12834', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00185', 'Loại đề tài SVVN trường UTE 12903', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00186', 'Loại đề tài KHKT trường UTE 12972', '2', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00187', 'Loại đề tài SVVN trường UTE 13041', '1', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00188', 'Loại đề tài Đồ án trường UTE 13110', '2', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE00189', 'Loại đề tài Đồ án trường UTE 13179', '2', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0019', 'Loại đề tài Đồ án trường UTE 1449', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00190', 'Loại đề tài Đồ án trường UTE 13248', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00191', 'Loại đề tài Tin học trẻ trường UTE 13317', '1', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE00192', 'Loại đề tài SVVN trường UTE 13386', '2', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00193', 'Loại đề tài Tin học trẻ trường UTE 13455', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE00194', 'Loại đề tài KHKT trường UTE 13524', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE00195', 'Loại đề tài Tin học trẻ trường UTE 13593', '2', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE00196', 'Loại đề tài SVVN trường UTE 13662', '3', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE00197', 'Loại đề tài Đồ án trường UTE 13731', '2', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00198', 'Loại đề tài KHKT trường UTE 13800', '1', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE00199', 'Loại đề tài KHKT trường UTE 13869', '3', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE002', 'Loại đề tài Tin học trẻ trường UTE 276', '1', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0020', 'Loại đề tài Đồ án trường UTE 1518', '3', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE00200', 'Loại đề tài Đồ án trường UTE 13938', '3', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE00201', 'Loại đề tài KHKT trường UTE 0', '2', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE00202', 'Loại đề tài KHKT trường UTE 0', '1', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0021', 'Loại đề tài KHKT trường UTE 1587', '3', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE0022', 'Loại đề tài SVVN trường UTE 1656', '3', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE0023', 'Loại đề tài Đồ án trường UTE 1725', '2', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE0024', 'Loại đề tài Tin học trẻ trường UTE 1794', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0025', 'Loại đề tài KHKT trường UTE 1863', '1', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0026', 'Loại đề tài Tin học trẻ trường UTE 1932', '3', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0027', 'Loại đề tài Tin học trẻ trường UTE 2001', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0028', 'Loại đề tài KHKT trường UTE 2070', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0029', 'Loại đề tài SVVN trường UTE 2139', '2', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE003', 'Loại đề tài Tin học trẻ trường UTE 345', '1', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0030', 'Loại đề tài SVVN trường UTE 2208', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0031', 'Loại đề tài SVVN trường UTE 2277', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0032', 'Loại đề tài SVVN trường UTE 2346', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0033', 'Loại đề tài Đồ án trường UTE 2415', '2', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0034', 'Loại đề tài Đồ án trường UTE 2484', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0035', 'Loại đề tài SVVN trường UTE 2553', '2', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0036', 'Loại đề tài Tin học trẻ trường UTE 2622', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0037', 'Loại đề tài Đồ án trường UTE 2691', '2', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0038', 'Loại đề tài Đồ án trường UTE 2760', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0039', 'Loại đề tài Đồ án trường UTE 2829', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE004', 'Loại đề tài Đồ án trường UTE 414', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0040', 'Loại đề tài Đồ án trường UTE 2898', '1', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0041', 'Loại đề tài KHKT trường UTE 2967', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0042', 'Loại đề tài SVVN trường UTE 3036', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0043', 'Loại đề tài KHKT trường UTE 3105', '2', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0044', 'Loại đề tài Tin học trẻ trường UTE 3174', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0045', 'Loại đề tài SVVN trường UTE 3243', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0046', 'Loại đề tài Đồ án trường UTE 3312', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0047', 'Loại đề tài SVVN trường UTE 3381', '1', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0048', 'Loại đề tài SVVN trường UTE 3450', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0049', 'Loại đề tài SVVN trường UTE 3519', '1', '2014');
+INSERT INTO `loaidetai` VALUES ('UTE005', 'Loại đề tài KHKT trường UTE 483', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0050', 'Loại đề tài SVVN trường UTE 3588', '1', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0051', 'Loại đề tài SVVN trường UTE 3657', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0052', 'Loại đề tài Tin học trẻ trường UTE 3726', '1', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0053', 'Loại đề tài Tin học trẻ trường UTE 3795', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0054', 'Loại đề tài KHKT trường UTE 3864', '1', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0055', 'Loại đề tài KHKT trường UTE 3933', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0056', 'Loại đề tài KHKT trường UTE 4002', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0057', 'Loại đề tài Đồ án trường UTE 4071', '2', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0058', 'Loại đề tài SVVN trường UTE 4140', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0059', 'Loại đề tài KHKT trường UTE 4209', '2', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE006', 'Loại đề tài SVVN trường UTE 552', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0060', 'Loại đề tài Tin học trẻ trường UTE 4278', '1', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0061', 'Loại đề tài Tin học trẻ trường UTE 4347', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0062', 'Loại đề tài KHKT trường UTE 4416', '2', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0063', 'Loại đề tài KHKT trường UTE 4485', '1', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE0064', 'Loại đề tài Tin học trẻ trường UTE 4554', '1', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE0065', 'Loại đề tài SVVN trường UTE 4623', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0066', 'Loại đề tài KHKT trường UTE 4692', '2', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0067', 'Loại đề tài KHKT trường UTE 4761', '3', '2011');
+INSERT INTO `loaidetai` VALUES ('UTE0068', 'Loại đề tài Đồ án trường UTE 4830', '3', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0069', 'Loại đề tài Đồ án trường UTE 4899', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE007', 'Loại đề tài Đồ án trường UTE 621', '3', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0070', 'Loại đề tài Đồ án trường UTE 4968', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0071', 'Loại đề tài SVVN trường UTE 5037', '3', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0072', 'Loại đề tài Đồ án trường UTE 5106', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0073', 'Loại đề tài KHKT trường UTE 5175', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0074', 'Loại đề tài KHKT trường UTE 5244', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0075', 'Loại đề tài Đồ án trường UTE 5313', '1', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0076', 'Loại đề tài Đồ án trường UTE 5382', '3', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0077', 'Loại đề tài KHKT trường UTE 5451', '1', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE0078', 'Loại đề tài KHKT trường UTE 5520', '1', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0079', 'Loại đề tài Đồ án trường UTE 5589', '2', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE008', 'Loại đề tài Tin học trẻ trường UTE 690', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0080', 'Loại đề tài SVVN trường UTE 5658', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE0081', 'Loại đề tài KHKT trường UTE 5727', '2', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0082', 'Loại đề tài KHKT trường UTE 5796', '2', '2016');
+INSERT INTO `loaidetai` VALUES ('UTE0083', 'Loại đề tài SVVN trường UTE 5865', '1', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0084', 'Loại đề tài KHKT trường UTE 5934', '1', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE0085', 'Loại đề tài Đồ án trường UTE 6003', '1', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0086', 'Loại đề tài Tin học trẻ trường UTE 6072', '1', '2020');
+INSERT INTO `loaidetai` VALUES ('UTE0087', 'Loại đề tài KHKT trường UTE 6141', '3', '2022');
+INSERT INTO `loaidetai` VALUES ('UTE0088', 'Loại đề tài Đồ án trường UTE 6210', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0089', 'Loại đề tài KHKT trường UTE 6279', '1', '2010');
+INSERT INTO `loaidetai` VALUES ('UTE009', 'Loại đề tài Đồ án trường UTE 759', '2', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0090', 'Loại đề tài Đồ án trường UTE 6348', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0091', 'Loại đề tài Đồ án trường UTE 6417', '2', '2018');
+INSERT INTO `loaidetai` VALUES ('UTE0092', 'Loại đề tài KHKT trường UTE 6486', '2', '2012');
+INSERT INTO `loaidetai` VALUES ('UTE0093', 'Loại đề tài SVVN trường UTE 6555', '3', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0094', 'Loại đề tài Đồ án trường UTE 6624', '1', '2019');
+INSERT INTO `loaidetai` VALUES ('UTE0095', 'Loại đề tài SVVN trường UTE 6693', '3', '2013');
+INSERT INTO `loaidetai` VALUES ('UTE0096', 'Loại đề tài Đồ án trường UTE 6762', '3', '2017');
+INSERT INTO `loaidetai` VALUES ('UTE0097', 'Loại đề tài Tin học trẻ trường UTE 6831', '2', '2021');
+INSERT INTO `loaidetai` VALUES ('UTE0098', 'Loại đề tài KHKT trường UTE 6900', '3', '2015');
+INSERT INTO `loaidetai` VALUES ('UTE0099', 'Loại đề tài Tin học trẻ trường UTE 6969', '3', '2014');
 
 -- ----------------------------
--- Table structure for Nganh
+-- Table structure for nganh
 -- ----------------------------
-DROP TABLE IF EXISTS `Nganh`;
-CREATE TABLE `Nganh`  (
-  `maNganh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tenNganh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+DROP TABLE IF EXISTS `nganh`;
+CREATE TABLE `nganh`  (
+  `maNganh` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tenNganh` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`maNganh`) USING BTREE,
   INDEX `maNganh`(`maNganh`) USING BTREE,
   INDEX `maNganh_2`(`maNganh`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of Nganh
+-- Records of nganh
 -- ----------------------------
-INSERT INTO `Nganh` VALUES ('0', 'Khác');
-INSERT INTO `Nganh` VALUES ('CNTT', 'Công nghệ thông tin');
-INSERT INTO `Nganh` VALUES ('ECO', 'Kinh tế');
-INSERT INTO `Nganh` VALUES ('EDU', 'Giáo dục');
-INSERT INTO `Nganh` VALUES ('MKT', 'Marketing');
+INSERT INTO `nganh` VALUES ('0', 'Chưa đăng ký');
+INSERT INTO `nganh` VALUES ('714', 'Khoa học giáo dục và đào tạo giáo viên');
+INSERT INTO `nganh` VALUES ('71401', 'Khoa học giáo dục');
+INSERT INTO `nganh` VALUES ('7140101', 'Giáo dục học');
+INSERT INTO `nganh` VALUES ('7140103', 'Công nghệ giáo dục');
+INSERT INTO `nganh` VALUES ('7140114', 'Quản lý giáo dục');
+INSERT INTO `nganh` VALUES ('71402', 'Đào tạo giáo viên');
+INSERT INTO `nganh` VALUES ('7140201', 'Giáo dục Mầm non');
+INSERT INTO `nganh` VALUES ('7140202', 'Giáo dục Tiểu học');
+INSERT INTO `nganh` VALUES ('7140203', 'Giáo dục Đặc biệt');
+INSERT INTO `nganh` VALUES ('7140204', 'Giáo dục Công dân');
+INSERT INTO `nganh` VALUES ('7140205', 'Giáo dục Chính trị');
+INSERT INTO `nganh` VALUES ('7140206', 'Giáo dục Thể chất');
+INSERT INTO `nganh` VALUES ('7140207', 'Huấn luyện thể thao');
+INSERT INTO `nganh` VALUES ('7140208', 'Giáo dục Quốc phòng - An ninh');
+INSERT INTO `nganh` VALUES ('7140209', 'Sư phạm Toán học');
+INSERT INTO `nganh` VALUES ('7140210', 'Sư phạm Tin học');
+INSERT INTO `nganh` VALUES ('7140211', 'Sư phạm Vật lý');
+INSERT INTO `nganh` VALUES ('7140212', 'Sư phạm Hóa học');
+INSERT INTO `nganh` VALUES ('7140213', 'Sư phạm Sinh học');
+INSERT INTO `nganh` VALUES ('7140214', 'Sư phạm Kỹ thuật công nghiệp');
+INSERT INTO `nganh` VALUES ('7140215', 'Sư phạm Kỹ thuật nông nghiệp');
+INSERT INTO `nganh` VALUES ('7140217', 'Sư phạm Ngữ văn');
+INSERT INTO `nganh` VALUES ('7140218', 'Sư phạm Lịch sử');
+INSERT INTO `nganh` VALUES ('7140219', 'Sư phạm Địa lý');
+INSERT INTO `nganh` VALUES ('7140221', 'Sư phạm Âm nhạc');
+INSERT INTO `nganh` VALUES ('7140222', 'Sư phạm Mỹ thuật');
+INSERT INTO `nganh` VALUES ('7140223', 'Sư phạm Tiếng Bana');
+INSERT INTO `nganh` VALUES ('7140224', 'Sư phạm Tiếng Êđê');
+INSERT INTO `nganh` VALUES ('7140225', 'Sư phạm Tiếng Jrai');
+INSERT INTO `nganh` VALUES ('7140226', 'Sư phạm Tiếng Khmer');
+INSERT INTO `nganh` VALUES ('7140227', 'Sư phạm Tiếng Hmong');
+INSERT INTO `nganh` VALUES ('7140228', 'Sư phạm Tiếng Chăm');
+INSERT INTO `nganh` VALUES ('7140229', 'Sư phạm Tiếng Mnông');
+INSERT INTO `nganh` VALUES ('7140230', 'Sư phạm Tiếng Xêđăng');
+INSERT INTO `nganh` VALUES ('7140231', 'Sư phạm Tiếng Anh');
+INSERT INTO `nganh` VALUES ('7140232', 'Sư phạm Tiếng Nga');
+INSERT INTO `nganh` VALUES ('7140233', 'Sư phạm Tiếng Pháp');
+INSERT INTO `nganh` VALUES ('7140234', 'Sư phạm Tiếng Trung Quốc');
+INSERT INTO `nganh` VALUES ('7140235', 'Sư phạm Tiếng Đức');
+INSERT INTO `nganh` VALUES ('7140236', 'Sư phạm Tiếng Nhật');
+INSERT INTO `nganh` VALUES ('7140237', 'Sư phạm Tiếng Hàn Quốc');
+INSERT INTO `nganh` VALUES ('7140245', 'Sư phạm nghệ thuật');
+INSERT INTO `nganh` VALUES ('7140246', 'Sư phạm công nghệ');
+INSERT INTO `nganh` VALUES ('7140247', 'Sư phạm Khoa học tự nhiên');
+INSERT INTO `nganh` VALUES ('7140248', 'Giáo dục pháp luật');
+INSERT INTO `nganh` VALUES ('7140249', 'Sư phạm Lịch sử - Địa lý');
+INSERT INTO `nganh` VALUES ('71490', 'Khác');
+INSERT INTO `nganh` VALUES ('721', 'Nghệ thuật');
+INSERT INTO `nganh` VALUES ('72101', 'Mỹ thuật');
+INSERT INTO `nganh` VALUES ('7210101', 'Lý luận, lịch sử và phê bình mỹ thuật');
+INSERT INTO `nganh` VALUES ('7210103', 'Hội họa');
+INSERT INTO `nganh` VALUES ('7210104', 'Đồ họa');
+INSERT INTO `nganh` VALUES ('7210105', 'Điêu khắc');
+INSERT INTO `nganh` VALUES ('7210107', 'Gốm');
+INSERT INTO `nganh` VALUES ('7210110', 'Mỹ thuật đô thị');
+INSERT INTO `nganh` VALUES ('72102', 'Nghệ thuật trình diễn');
+INSERT INTO `nganh` VALUES ('7210201', 'Âm nhạc học');
+INSERT INTO `nganh` VALUES ('7210203', 'Sáng tác âm nhạc');
+INSERT INTO `nganh` VALUES ('7210204', 'Chỉ huy âm nhạc');
+INSERT INTO `nganh` VALUES ('7210205', 'Thanh nhạc');
+INSERT INTO `nganh` VALUES ('7210207', 'Biểu diễn nhạc cụ phương tây');
+INSERT INTO `nganh` VALUES ('7210208', 'Piano');
+INSERT INTO `nganh` VALUES ('7210209', 'Nhạc Jazz');
+INSERT INTO `nganh` VALUES ('7210210', 'Biểu diễn nhạc cụ truyền thống');
+INSERT INTO `nganh` VALUES ('7210221', 'Lý luận, lịch sử và phê bình sân khấu');
+INSERT INTO `nganh` VALUES ('7210225', 'Biên kịch sân khấu');
+INSERT INTO `nganh` VALUES ('7210226', 'Diễn viên sân khấu kịch hát');
+INSERT INTO `nganh` VALUES ('7210227', 'Đạo diễn sân khấu');
+INSERT INTO `nganh` VALUES ('7210231', 'Lý luận, lịch sử và phê bình điện ảnh, truyền hình');
+INSERT INTO `nganh` VALUES ('7210233', 'Biên kịch điện ảnh, truyền hình');
+INSERT INTO `nganh` VALUES ('7210234', 'Diễn viên kịch, điện ảnh - truyền hình');
+INSERT INTO `nganh` VALUES ('7210235', 'Đạo diễn điện ảnh, truyền hình');
+INSERT INTO `nganh` VALUES ('7210236', 'Quay phim');
+INSERT INTO `nganh` VALUES ('7210241', 'Lý luận, lịch sử và phê bình múa');
+INSERT INTO `nganh` VALUES ('7210242', 'Diễn viên múa');
+INSERT INTO `nganh` VALUES ('7210243', 'Biên đạo múa');
+INSERT INTO `nganh` VALUES ('7210244', 'Huấn luyện múa');
+INSERT INTO `nganh` VALUES ('72103', 'Nghệ thuật nghe nhìn');
+INSERT INTO `nganh` VALUES ('7210301', 'Nhiếp ảnh');
+INSERT INTO `nganh` VALUES ('7210302', 'Công nghệ điện ảnh, truyền hình');
+INSERT INTO `nganh` VALUES ('7210303', 'Thiết kế âm thanh, ánh sáng');
+INSERT INTO `nganh` VALUES ('72104', 'Mỹ thuật ứng dụng');
+INSERT INTO `nganh` VALUES ('7210402', 'Thiết kế công nghiệp');
+INSERT INTO `nganh` VALUES ('7210403', 'Thiết kế đồ họa');
+INSERT INTO `nganh` VALUES ('7210404', 'Thiết kế thời trang');
+INSERT INTO `nganh` VALUES ('7210406', 'Thiết kế mỹ thuật sân khấu, điện ảnh');
+INSERT INTO `nganh` VALUES ('72190', 'Khác');
+INSERT INTO `nganh` VALUES ('722', 'Nhân văn');
+INSERT INTO `nganh` VALUES ('72201', 'Ngôn ngữ, văn học và văn hóa Việt Nam');
+INSERT INTO `nganh` VALUES ('7220101', 'Tiếng Việt và văn hóa Việt Nam');
+INSERT INTO `nganh` VALUES ('7220104', 'Hán Nôm');
+INSERT INTO `nganh` VALUES ('7220105', 'Ngôn ngữ Jrai');
+INSERT INTO `nganh` VALUES ('7220106', 'Ngôn ngữ Khmer');
+INSERT INTO `nganh` VALUES ('7220107', 'Ngôn ngữ Hmong');
+INSERT INTO `nganh` VALUES ('7220108', 'Ngôn ngữ Chăm');
+INSERT INTO `nganh` VALUES ('7220110', 'Sáng tác văn học');
+INSERT INTO `nganh` VALUES ('7220112', 'Văn hóa các dân tộc thiểu số Việt Nam');
+INSERT INTO `nganh` VALUES ('72202', 'Ngôn ngữ, văn học và văn hóa nước ngoài');
+INSERT INTO `nganh` VALUES ('7220201', 'Ngôn ngữ Anh');
+INSERT INTO `nganh` VALUES ('7220202', 'Ngôn ngữ Nga');
+INSERT INTO `nganh` VALUES ('7220203', 'Ngôn ngữ Pháp');
+INSERT INTO `nganh` VALUES ('7220204', 'Ngôn ngữ Trung Quốc');
+INSERT INTO `nganh` VALUES ('7220205', 'Ngôn ngữ Đức');
+INSERT INTO `nganh` VALUES ('7220206', 'Ngôn ngữ Tây Ban Nha');
+INSERT INTO `nganh` VALUES ('7220207', 'Ngôn ngữ Bồ Đào Nha');
+INSERT INTO `nganh` VALUES ('7220208', 'Ngôn ngữ Italia');
+INSERT INTO `nganh` VALUES ('7220209', 'Ngôn ngữ Nhật');
+INSERT INTO `nganh` VALUES ('7220210', 'Ngôn ngữ Hàn Quốc');
+INSERT INTO `nganh` VALUES ('7220211', 'Ngôn ngữ Ảrập');
+INSERT INTO `nganh` VALUES ('72290', 'Khác');
 
 -- ----------------------------
--- Table structure for Users
+-- Table structure for users
 -- ----------------------------
-DROP TABLE IF EXISTS `Users`;
-CREATE TABLE `Users`  (
-  `Id` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `maNganh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `Id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `maNganh` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `fullname` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
   `birthday` datetime NULL DEFAULT NULL,
-  `schoolyear` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `role` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `maHoiDong` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `schoolyear` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `maHoiDong` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`Id`) USING BTREE,
   INDEX `fk_Users_Nganh`(`maNganh`) USING BTREE,
   INDEX `Id`(`Id`) USING BTREE,
   INDEX `Id_2`(`Id`) USING BTREE,
   INDEX `Id_3`(`Id`) USING BTREE,
   INDEX `fk_Users_HoiDong`(`maHoiDong`) USING BTREE,
-  CONSTRAINT `fk_Users_HoiDong` FOREIGN KEY (`maHoiDong`) REFERENCES `HoiDong` (`mahoidong`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_Users_Nganh` FOREIGN KEY (`maNganh`) REFERENCES `Nganh` (`manganh`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+  CONSTRAINT `fk_Users_HoiDong` FOREIGN KEY (`maHoiDong`) REFERENCES `hoidong` (`maHoiDong`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `fk_Users_Nganh` FOREIGN KEY (`maNganh`) REFERENCES `nganh` (`maNganh`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of Users
+-- Records of users
 -- ----------------------------
-INSERT INTO `Users` VALUES ('1', '0', '1', 'Admin', NULL, NULL, NULL, NULL, 'Admin', '0', NULL);
-INSERT INTO `Users` VALUES ('2', 'CNTT', '2', 'Trưởng bộ môn CNTT', NULL, NULL, NULL, NULL, 'TruongBoMon', 'HD2022', NULL);
-INSERT INTO `Users` VALUES ('3', 'CNTT', '3', 'Giảng Viên', NULL, NULL, NULL, NULL, 'GiangVien', 'HD2022', NULL);
-INSERT INTO `Users` VALUES ('4', 'CNTT', '4', 'Sinh Viên', NULL, NULL, NULL, NULL, 'SinhVien', '0', NULL);
+INSERT INTO `users` VALUES ('1', NULL, '1', 'Admin', NULL, NULL, NULL, NULL, 'Admin', NULL, NULL);
+INSERT INTO `users` VALUES ('10', NULL, '10', 'Nguyễn Đức An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('100', NULL, '100', 'Văn Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('101', NULL, '101', 'Lê Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('102', NULL, '102', 'Văn Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('103', NULL, '103', 'Nguyễn Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('104', NULL, '104', 'Trần Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('105', NULL, '105', 'Ngô Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('106', NULL, '106', 'Đào Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('107', NULL, '107', 'Văn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('108', NULL, '108', 'Văn Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('109', NULL, '109', 'Đào Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('11', NULL, '11', 'Đào Phan Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('110', NULL, '110', 'Lê Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('111', NULL, '111', 'Ngô Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('112', NULL, '112', 'Văn Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('113', NULL, '113', 'Nguyễn Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('114', NULL, '114', 'Văn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('115', NULL, '115', 'Lê Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('116', NULL, '116', 'Đào Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('117', NULL, '117', 'Nguyễn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('118', NULL, '118', 'Trần Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('119', NULL, '119', 'Nguyễn Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('12', NULL, '12', 'Nguyễn Đức Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('120', NULL, '120', 'Đào Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('121', NULL, '121', 'Văn Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('122', NULL, '122', 'Lê Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('123', NULL, '123', 'Trần Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('124', NULL, '124', 'Lê Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('125', NULL, '125', 'Lê Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('126', NULL, '126', 'Ngô Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('127', NULL, '127', 'Văn Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('128', NULL, '128', 'Lê Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('129', NULL, '129', 'Đào Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('13', NULL, '13', 'Nguyễn Thị Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('130', NULL, '130', 'Lê Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('131', NULL, '131', 'Lê Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('132', NULL, '132', 'Đào Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('133', NULL, '133', 'Ngô Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('134', NULL, '134', 'Đào Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('135', NULL, '135', 'Trần Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('136', NULL, '136', 'Văn Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('137', NULL, '137', 'Đào Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('138', NULL, '138', 'Lê Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('139', NULL, '139', 'Đào Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('14', NULL, '14', 'Lê Thị Xuân', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('140', NULL, '140', 'Văn Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('141', NULL, '141', 'Nguyễn Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('142', NULL, '142', 'Ngô Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('143', NULL, '143', 'Nguyễn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('144', NULL, '144', 'Văn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('145', NULL, '145', 'Nguyễn Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('146', NULL, '146', 'Ngô Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('147', NULL, '147', 'Nguyễn Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('148', NULL, '148', 'Ngô Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('149', NULL, '149', 'Trần Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('15', NULL, '15', 'Văn Phan An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('150', NULL, '150', 'Ngô Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('151', NULL, '151', 'Trần Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('152', NULL, '152', 'Nguyễn Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('153', NULL, '153', 'Lê Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('154', NULL, '154', 'Văn Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('155', NULL, '155', 'Lê Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('156', NULL, '156', 'Lê Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('157', NULL, '157', 'Trần Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('158', NULL, '158', 'Lê Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('159', NULL, '159', 'Lê Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('16', NULL, '16', 'Ngô Thị Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('160', NULL, '160', 'Trần Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('161', NULL, '161', 'Nguyễn Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('162', NULL, '162', 'Ngô Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('163', NULL, '163', 'Ngô Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('164', NULL, '164', 'Lê Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('165', NULL, '165', 'Đào Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('166', NULL, '166', 'Ngô Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('167', NULL, '167', 'Ngô Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('168', NULL, '168', 'Ngô Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('169', NULL, '169', 'Trần Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('17', NULL, '17', 'Văn Thị Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('170', NULL, '170', 'Nguyễn Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('171', NULL, '171', 'Đào Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('172', NULL, '172', 'Đào Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('173', NULL, '173', 'Trần Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('174', NULL, '174', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('175', NULL, '175', 'Ngô Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('176', NULL, '176', 'Lê Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('177', NULL, '177', 'Văn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('178', NULL, '178', 'Văn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('179', NULL, '179', 'Nguyễn Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('18', NULL, '18', 'Trần Xuân Xuân', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('180', NULL, '180', 'Lê Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('181', NULL, '181', 'Lê Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('182', NULL, '182', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('183', NULL, '183', 'Trần Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('184', NULL, '184', 'Trần Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('185', NULL, '185', 'Ngô Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('186', NULL, '186', 'Trần Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('187', NULL, '187', 'Văn Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('188', NULL, '188', 'Trần Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('189', NULL, '189', 'Lê Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('19', NULL, '19', 'Lê Phan An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('190', NULL, '190', 'Lê Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('191', NULL, '191', 'Nguyễn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('192', NULL, '192', 'Trần Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('193', NULL, '193', 'Nguyễn Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('194', NULL, '194', 'Lê Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('195', NULL, '195', 'Nguyễn Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('196', NULL, '196', 'Lê Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('197', NULL, '197', 'Trần Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('198', NULL, '198', 'Văn Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('199', NULL, '199', 'Trần Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('2', NULL, '2', 'Nguyễn Văn A', NULL, NULL, NULL, NULL, 'TruongBoMon', NULL, NULL);
+INSERT INTO `users` VALUES ('20', NULL, '20', 'Đào Phan Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('200', NULL, '200', 'Trần Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('201', NULL, '201', 'Lê Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('202', NULL, '202', 'Văn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('203', NULL, '203', 'Văn Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('204', NULL, '204', 'Ngô Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('205', NULL, '205', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('206', NULL, '206', 'Ngô Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('207', NULL, '207', 'Đào Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('208', NULL, '208', 'Lê Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('209', NULL, '209', 'Văn Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('21', NULL, '21', 'Trần Văn Long', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('210', NULL, '210', 'Lê Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('211', NULL, '211', 'Lê Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('212', NULL, '212', 'Trần Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('213', NULL, '213', 'Lê Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('214', NULL, '214', 'Đào Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('215', NULL, '215', 'Đào Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('216', NULL, '216', 'Văn Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('217', NULL, '217', 'Văn Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('218', NULL, '218', 'Đào Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('219', NULL, '219', 'Đào Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('22', NULL, '22', 'Văn Văn Long', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('220', NULL, '220', 'Nguyễn Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('221', NULL, '221', 'Lê Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('222', NULL, '222', 'Lê Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('223', NULL, '223', 'Nguyễn Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('224', NULL, '224', 'Đào Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('225', NULL, '225', 'Văn Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('226', NULL, '226', 'Văn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('227', NULL, '227', 'Đào Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('228', NULL, '228', 'Văn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('229', NULL, '229', 'Trần Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('23', NULL, '23', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('230', NULL, '230', 'Trần Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('231', NULL, '231', 'Đào Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('232', NULL, '232', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('233', NULL, '233', 'Ngô Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('234', NULL, '234', 'Nguyễn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('235', NULL, '235', 'Trần Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('236', NULL, '236', 'Nguyễn Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('237', NULL, '237', 'Trần Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('238', NULL, '238', 'Văn Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('239', NULL, '239', 'Đào Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('24', NULL, '24', 'Lê Phan Như', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('240', NULL, '240', 'Nguyễn Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('241', NULL, '241', 'Đào Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('242', NULL, '242', 'Trần Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('243', NULL, '243', 'Ngô Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('244', NULL, '244', 'Lê Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('245', NULL, '245', 'Ngô Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('246', NULL, '246', 'Ngô Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('247', NULL, '247', 'Đào Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('248', NULL, '248', 'Trần Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('249', NULL, '249', 'Ngô Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('25', NULL, '25', 'Trần Văn My', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('250', NULL, '250', 'Văn Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('251', NULL, '251', 'Lê Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('252', NULL, '252', 'Lê Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('253', NULL, '253', 'Nguyễn Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('254', NULL, '254', 'Lê Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('255', NULL, '255', 'Lê Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('256', NULL, '256', 'Đào Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('257', NULL, '257', 'Lê Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('258', NULL, '258', 'Văn Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('259', NULL, '259', 'Ngô Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('26', NULL, '26', 'Ngô Đức Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('260', NULL, '260', 'Trần Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('261', NULL, '261', 'Lê Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('262', NULL, '262', 'Lê Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('263', NULL, '263', 'Nguyễn Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('264', NULL, '264', 'Nguyễn Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('265', NULL, '265', 'Ngô Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('266', NULL, '266', 'Trần Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('267', NULL, '267', 'Văn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('268', NULL, '268', 'Đào Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('269', NULL, '269', 'Đào Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('27', NULL, '27', 'Nguyễn Thị Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('270', NULL, '270', 'Lê Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('271', NULL, '271', 'Lê Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('272', NULL, '272', 'Đào Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('273', NULL, '273', 'Lê Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('274', NULL, '274', 'Đào Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('275', NULL, '275', 'Lê Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('276', NULL, '276', 'Nguyễn Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('277', NULL, '277', 'Trần Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('278', NULL, '278', 'Lê Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('279', NULL, '279', 'Đào Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('28', NULL, '28', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('280', NULL, '280', 'Văn Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('281', NULL, '281', 'Trần Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('282', NULL, '282', 'Nguyễn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('283', NULL, '283', 'Nguyễn Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('284', NULL, '284', 'Lê Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('285', NULL, '285', 'Lê Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('286', NULL, '286', 'Đào Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('287', NULL, '287', 'Nguyễn Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('288', NULL, '288', 'Văn Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('289', NULL, '289', 'Lê Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('29', NULL, '29', 'Nguyễn Đức Như', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('290', NULL, '290', 'Nguyễn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('291', NULL, '291', 'Đào Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('292', NULL, '292', 'Trần Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('293', NULL, '293', 'Nguyễn Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('294', NULL, '294', 'Văn Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('295', NULL, '295', 'Nguyễn Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('296', NULL, '296', 'Ngô Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('297', NULL, '297', 'Đào Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('298', NULL, '298', 'Lê Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('299', NULL, '299', 'Nguyễn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('3', NULL, '3', 'Trần Văn B', NULL, NULL, NULL, NULL, 'TruongBoMon', NULL, NULL);
+INSERT INTO `users` VALUES ('30', NULL, '30', 'Trần Xuân An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('300', NULL, '300', 'Trần Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('301', NULL, '301', 'Trần Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('302', NULL, '302', 'Ngô Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('303', NULL, '303', 'Nguyễn Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('304', NULL, '304', 'Nguyễn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('305', NULL, '305', 'Ngô Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('306', NULL, '306', 'Ngô Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('307', NULL, '307', 'Văn Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('308', NULL, '308', 'Trần Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('309', NULL, '309', 'Ngô Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('31', NULL, '31', 'Lê Đức An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('310', NULL, '310', 'Đào Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('311', NULL, '311', 'Lê Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('312', NULL, '312', 'Lê Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('313', NULL, '313', 'Trần Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('314', NULL, '314', 'Ngô Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('315', NULL, '315', 'Ngô Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('316', NULL, '316', 'Nguyễn Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('317', NULL, '317', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('318', NULL, '318', 'Trần Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('319', NULL, '319', 'Lê Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('32', NULL, '32', 'Đào Đức Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('320', NULL, '320', 'Đào Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('321', NULL, '321', 'Ngô Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('322', NULL, '322', 'Trần Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('323', NULL, '323', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('324', NULL, '324', 'Lê Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('325', NULL, '325', 'Trần Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('326', NULL, '326', 'Lê Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('327', NULL, '327', 'Nguyễn Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('328', NULL, '328', 'Lê Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('329', NULL, '329', 'Văn Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('33', NULL, '33', 'Văn Đức Thảo', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('330', NULL, '330', 'Trần Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('331', NULL, '331', 'Văn Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('332', NULL, '332', 'Lê Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('333', NULL, '333', 'Trần Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('334', NULL, '334', 'Đào Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('335', NULL, '335', 'Lê Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('336', NULL, '336', 'Lê Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('337', NULL, '337', 'Đào Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('338', NULL, '338', 'Trần Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('339', NULL, '339', 'Nguyễn Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('34', NULL, '34', 'Nguyễn Văn Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('340', NULL, '340', 'Văn Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('341', NULL, '341', 'Lê Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('342', NULL, '342', 'Ngô Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('343', NULL, '343', 'Ngô Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('344', NULL, '344', 'Trần Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('345', NULL, '345', 'Trần Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('346', NULL, '346', 'Đào Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('347', NULL, '347', 'Văn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('348', NULL, '348', 'Đào Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('349', NULL, '349', 'Ngô Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('35', NULL, '35', 'Văn Phan Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('350', NULL, '350', 'Ngô Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('351', NULL, '351', 'Đào Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('352', NULL, '352', 'Văn Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('353', NULL, '353', 'Đào Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('354', NULL, '354', 'Nguyễn Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('355', NULL, '355', 'Văn Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('356', NULL, '356', 'Lê Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('357', NULL, '357', 'Đào Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('358', NULL, '358', 'Lê Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('359', NULL, '359', 'Lê Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('36', NULL, '36', 'Lê Xuân Thảo', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('360', NULL, '360', 'Ngô Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('361', NULL, '361', 'Ngô Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('362', NULL, '362', 'Đào Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('363', NULL, '363', 'Lê Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('364', NULL, '364', 'Văn Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('365', NULL, '365', 'Trần Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('366', NULL, '366', 'Trần Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('367', NULL, '367', 'Đào Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('368', NULL, '368', 'Đào Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('369', NULL, '369', 'Ngô Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('37', NULL, '37', 'Văn Đức Như', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('370', NULL, '370', 'Lê Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('371', NULL, '371', 'Lê Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('372', NULL, '372', 'Trần Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('373', NULL, '373', 'Đào Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('374', NULL, '374', 'Trần Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('375', NULL, '375', 'Trần Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('376', NULL, '376', 'Lê Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('377', NULL, '377', 'Ngô Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('378', NULL, '378', 'Lê Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('379', NULL, '379', 'Nguyễn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('38', NULL, '38', 'Lê Phan Xuân', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('380', NULL, '380', 'Trần Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('381', NULL, '381', 'Nguyễn Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('382', NULL, '382', 'Văn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('383', NULL, '383', 'Lê Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('384', NULL, '384', 'Đào Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('385', NULL, '385', 'Đào Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('386', NULL, '386', 'Trần Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('387', NULL, '387', 'Lê Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('388', NULL, '388', 'Nguyễn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('389', NULL, '389', 'Lê Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('39', NULL, '39', 'Trần Phan Tình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('390', NULL, '390', 'Trần Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('391', NULL, '391', 'Ngô Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('392', NULL, '392', 'Nguyễn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('393', NULL, '393', 'Nguyễn Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('394', NULL, '394', 'Văn Văn Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('395', NULL, '395', 'Ngô Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('396', NULL, '396', 'Nguyễn Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('397', NULL, '397', 'Đào Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('398', NULL, '398', 'Nguyễn Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('399', NULL, '399', 'Nguyễn Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('4', NULL, '4', 'Lê Thị C', NULL, NULL, NULL, NULL, 'TruongBoMon', NULL, NULL);
+INSERT INTO `users` VALUES ('40', NULL, '40', 'Lê Xuân Nhi', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('400', NULL, '400', 'Văn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('401', NULL, '401', 'Đào Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('402', NULL, '402', 'Văn Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('403', NULL, '403', 'Lê Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('404', NULL, '404', 'Đào Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('405', NULL, '405', 'Ngô Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('406', NULL, '406', 'Nguyễn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('407', NULL, '407', 'Lê Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('408', NULL, '408', 'Lê Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('409', NULL, '409', 'Trần Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('41', NULL, '41', 'Lê Thị An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('410', NULL, '410', 'Đào Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('411', NULL, '411', 'Trần Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('412', NULL, '412', 'Lê Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('413', NULL, '413', 'Nguyễn Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('414', NULL, '414', 'Lê Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('415', NULL, '415', 'Trần Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('416', NULL, '416', 'Đào Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('417', NULL, '417', 'Ngô Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('418', NULL, '418', 'Lê Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('419', NULL, '419', 'Đào Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('42', NULL, '42', 'Trần Xuân Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('420', NULL, '420', 'Nguyễn Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('421', NULL, '421', 'Đào Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('422', NULL, '422', 'Đào Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('423', NULL, '423', 'Văn Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('424', NULL, '424', 'Trần Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('425', NULL, '425', 'Trần Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('426', NULL, '426', 'Đào Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('427', NULL, '427', 'Nguyễn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('428', NULL, '428', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('429', NULL, '429', 'Văn Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('43', NULL, '43', 'Đào Thị Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('430', NULL, '430', 'Trần Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('431', NULL, '431', 'Ngô Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('432', NULL, '432', 'Trần Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('433', NULL, '433', 'Văn Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('434', NULL, '434', 'Văn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('435', NULL, '435', 'Ngô Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('436', NULL, '436', 'Nguyễn Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('437', NULL, '437', 'Ngô Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('438', NULL, '438', 'Ngô Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('439', NULL, '439', 'Đào Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('44', NULL, '44', 'Văn Thị Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('440', NULL, '440', 'Ngô Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('441', NULL, '441', 'Văn Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('442', NULL, '442', 'Ngô Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('443', NULL, '443', 'Nguyễn Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('444', NULL, '444', 'Ngô Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('445', NULL, '445', 'Nguyễn Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('446', NULL, '446', 'Lê Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('447', NULL, '447', 'Văn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('448', NULL, '448', 'Đào Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('449', NULL, '449', 'Lê Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('45', NULL, '45', 'Đào Thị Tình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('450', NULL, '450', 'Trần Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('451', NULL, '451', 'Văn Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('452', NULL, '452', 'Trần Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('453', NULL, '453', 'Văn Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('454', NULL, '454', 'Lê Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('455', NULL, '455', 'Trần Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('456', NULL, '456', 'Văn Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('457', NULL, '457', 'Đào Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('458', NULL, '458', 'Lê Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('459', NULL, '459', 'Văn Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('46', NULL, '46', 'Trần Thị Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('460', NULL, '460', 'Trần Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('461', NULL, '461', 'Trần Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('462', NULL, '462', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('463', NULL, '463', 'Trần Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('464', NULL, '464', 'Nguyễn Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('465', NULL, '465', 'Trần Văn My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('466', NULL, '466', 'Đào Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('467', NULL, '467', 'Nguyễn Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('468', NULL, '468', 'Lê Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('469', NULL, '469', 'Lê Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('47', NULL, '47', 'Đào Đức Nhi', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('470', NULL, '470', 'Nguyễn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('471', NULL, '471', 'Nguyễn Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('472', NULL, '472', 'Ngô Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('473', NULL, '473', 'Văn Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('474', NULL, '474', 'Ngô Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('475', NULL, '475', 'Lê Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('476', NULL, '476', 'Nguyễn Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('477', NULL, '477', 'Trần Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('478', NULL, '478', 'Ngô Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('479', NULL, '479', 'Lê Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('48', NULL, '48', 'Đào Xuân Xuân', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('480', NULL, '480', 'Đào Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('481', NULL, '481', 'Trần Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('482', NULL, '482', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('483', NULL, '483', 'Trần Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('484', NULL, '484', 'Trần Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('485', NULL, '485', 'Nguyễn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('486', NULL, '486', 'Ngô Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('487', NULL, '487', 'Văn Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('488', NULL, '488', 'Văn Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('489', NULL, '489', 'Lê Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('49', NULL, '49', 'Trần Xuân Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('490', NULL, '490', 'Đào Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('491', NULL, '491', 'Văn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('492', NULL, '492', 'Lê Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('493', NULL, '493', 'Trần Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('494', NULL, '494', 'Lê Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('495', NULL, '495', 'Nguyễn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('496', NULL, '496', 'Ngô Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('497', NULL, '497', 'Trần Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('498', NULL, '498', 'Lê Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('499', NULL, '499', 'Trần Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('5', NULL, '5', 'Ngô Đức D', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('50', NULL, '50', 'Nguyễn Xuân My', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('500', NULL, '500', 'Văn Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('501', NULL, '501', 'Lê Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('502', NULL, '502', 'Ngô Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('503', NULL, '503', 'Đào Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('504', NULL, '504', 'Nguyễn Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('505', NULL, '505', 'Đào Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('506', NULL, '506', 'Trần Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('507', NULL, '507', 'Trần Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('508', NULL, '508', 'Ngô Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('509', NULL, '509', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('51', NULL, '51', 'Lê Phan Như', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('510', NULL, '510', 'Ngô Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('511', NULL, '511', 'Đào Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('512', NULL, '512', 'Văn Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('513', NULL, '513', 'Ngô Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('514', NULL, '514', 'Văn Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('515', NULL, '515', 'Nguyễn Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('516', NULL, '516', 'Nguyễn Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('517', NULL, '517', 'Văn Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('518', NULL, '518', 'Ngô Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('519', NULL, '519', 'Đào Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('52', NULL, '52', 'Trần Văn Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('520', NULL, '520', 'Đào Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('521', NULL, '521', 'Ngô Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('522', NULL, '522', 'Nguyễn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('523', NULL, '523', 'Đào Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('524', NULL, '524', 'Đào Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('525', NULL, '525', 'Trần Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('526', NULL, '526', 'Lê Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('527', NULL, '527', 'Đào Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('528', NULL, '528', 'Nguyễn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('529', NULL, '529', 'Ngô Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('53', NULL, '53', 'Nguyễn Xuân An', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('530', NULL, '530', 'Ngô Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('531', NULL, '531', 'Ngô Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('532', NULL, '532', 'Ngô Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('533', NULL, '533', 'Trần Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('534', NULL, '534', 'Lê Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('535', NULL, '535', 'Đào Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('536', NULL, '536', 'Lê Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('537', NULL, '537', 'Văn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('538', NULL, '538', 'Lê Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('539', NULL, '539', 'Ngô Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('54', NULL, '54', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('540', NULL, '540', 'Lê Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('541', NULL, '541', 'Văn Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('542', NULL, '542', 'Văn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('543', NULL, '543', 'Đào Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('544', NULL, '544', 'Nguyễn Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('545', NULL, '545', 'Văn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('546', NULL, '546', 'Đào Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('547', NULL, '547', 'Ngô Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('548', NULL, '548', 'Lê Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('549', NULL, '549', 'Nguyễn Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('55', NULL, '55', 'Văn Thị Long', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('550', NULL, '550', 'Văn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('551', NULL, '551', 'Văn Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('552', NULL, '552', 'Lê Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('553', NULL, '553', 'Ngô Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('554', NULL, '554', 'Văn Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('555', NULL, '555', 'Trần Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('556', NULL, '556', 'Đào Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('557', NULL, '557', 'Trần Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('558', NULL, '558', 'Nguyễn Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('559', NULL, '559', 'Văn Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('56', NULL, '56', 'Văn Thị My', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('560', NULL, '560', 'Văn Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('561', NULL, '561', 'Lê Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('562', NULL, '562', 'Ngô Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('563', NULL, '563', 'Ngô Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('564', NULL, '564', 'Ngô Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('565', NULL, '565', 'Văn Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('566', NULL, '566', 'Lê Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('567', NULL, '567', 'Đào Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('568', NULL, '568', 'Đào Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('569', NULL, '569', 'Văn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('57', NULL, '57', 'Ngô Phan Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('570', NULL, '570', 'Trần Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('571', NULL, '571', 'Trần Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('572', NULL, '572', 'Nguyễn Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('573', NULL, '573', 'Ngô Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('574', NULL, '574', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('575', NULL, '575', 'Trần Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('576', NULL, '576', 'Đào Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('577', NULL, '577', 'Nguyễn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('578', NULL, '578', 'Nguyễn Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('579', NULL, '579', 'Trần Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('58', NULL, '58', 'Nguyễn Phan Nhi', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('580', NULL, '580', 'Trần Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('581', NULL, '581', 'Ngô Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('582', NULL, '582', 'Đào Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('583', NULL, '583', 'Đào Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('584', NULL, '584', 'Ngô Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('585', NULL, '585', 'Ngô Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('586', NULL, '586', 'Nguyễn Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('587', NULL, '587', 'Văn Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('588', NULL, '588', 'Đào Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('589', NULL, '589', 'Văn Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('59', NULL, '59', 'Trần Văn Bình', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('590', NULL, '590', 'Nguyễn Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('591', NULL, '591', 'Văn Đức Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('592', NULL, '592', 'Lê Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('593', NULL, '593', 'Văn Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('594', NULL, '594', 'Nguyễn Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('595', NULL, '595', 'Lê Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('596', NULL, '596', 'Đào Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('597', NULL, '597', 'Ngô Xuân Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('598', NULL, '598', 'Văn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('599', NULL, '599', 'Ngô Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('6', NULL, '6', 'Phùng Xuân E', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('60', NULL, '60', 'Văn Đức Tú', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('600', NULL, '600', 'Lê Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('601', NULL, '601', 'Nguyễn Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('602', NULL, '602', 'Ngô Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('603', NULL, '603', 'Ngô Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('604', NULL, '604', 'Đào Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('605', NULL, '605', 'Ngô Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('606', NULL, '606', 'Văn Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('607', NULL, '607', 'Văn Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('608', NULL, '608', 'Đào Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('609', NULL, '609', 'Ngô Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('61', NULL, '61', 'Nguyễn Văn Long', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('610', NULL, '610', 'Nguyễn Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('611', NULL, '611', 'Lê Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('612', NULL, '612', 'Lê Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('613', NULL, '613', 'Lê Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('614', NULL, '614', 'Văn Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('615', NULL, '615', 'Trần Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('616', NULL, '616', 'Lê Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('617', NULL, '617', 'Ngô Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('618', NULL, '618', 'Trần Phan Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('619', NULL, '619', 'Văn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('62', NULL, '62', 'Ngô Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('620', NULL, '620', 'Ngô Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('621', NULL, '621', 'Trần Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('622', NULL, '622', 'Đào Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('623', NULL, '623', 'Đào Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('624', NULL, '624', 'Văn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('625', NULL, '625', 'Nguyễn Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('626', NULL, '626', 'Lê Thị Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('627', NULL, '627', 'Lê Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('628', NULL, '628', 'Đào Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('629', NULL, '629', 'Lê Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('63', NULL, '63', 'Đào Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('630', NULL, '630', 'Lê Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('631', NULL, '631', 'Đào Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('632', NULL, '632', 'Đào Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('633', NULL, '633', 'Lê Phan Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('634', NULL, '634', 'Ngô Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('635', NULL, '635', 'Trần Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('636', NULL, '636', 'Ngô Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('637', NULL, '637', 'Trần Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('638', NULL, '638', 'Văn Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('639', NULL, '639', 'Ngô Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('64', NULL, '64', 'Ngô Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('640', NULL, '640', 'Trần Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('641', NULL, '641', 'Đào Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('642', NULL, '642', 'Lê Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('643', NULL, '643', 'Đào Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('644', NULL, '644', 'Đào Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('645', NULL, '645', 'Lê Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('646', NULL, '646', 'Lê Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('647', NULL, '647', 'Văn Xuân Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('648', NULL, '648', 'Đào Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('649', NULL, '649', 'Văn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('65', NULL, '65', 'Lê Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('650', NULL, '650', 'Nguyễn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('651', NULL, '651', 'Đào Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('652', NULL, '652', 'Đào Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('653', NULL, '653', 'Nguyễn Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('654', NULL, '654', 'Trần Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('655', NULL, '655', 'Đào Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('656', NULL, '656', 'Trần Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('657', NULL, '657', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('658', NULL, '658', 'Đào Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('659', NULL, '659', 'Trần Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('66', NULL, '66', 'Trần Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('660', NULL, '660', 'Trần Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('661', NULL, '661', 'Văn Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('662', NULL, '662', 'Văn Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('663', NULL, '663', 'Trần Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('664', NULL, '664', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('665', NULL, '665', 'Nguyễn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('666', NULL, '666', 'Đào Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('667', NULL, '667', 'Lê Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('668', NULL, '668', 'Đào Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('669', NULL, '669', 'Nguyễn Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('67', NULL, '67', 'Trần Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('670', NULL, '670', 'Đào Thị Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('671', NULL, '671', 'Lê Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('672', NULL, '672', 'Ngô Thị Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('673', NULL, '673', 'Ngô Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('674', NULL, '674', 'Văn Đức Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('675', NULL, '675', 'Ngô Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('676', NULL, '676', 'Lê Phan Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('677', NULL, '677', 'Văn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('678', NULL, '678', 'Ngô Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('679', NULL, '679', 'Nguyễn Văn Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('68', NULL, '68', 'Đào Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('680', NULL, '680', 'Nguyễn Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('681', NULL, '681', 'Văn Văn Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('682', NULL, '682', 'Ngô Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('683', NULL, '683', 'Ngô Phan My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('684', NULL, '684', 'Đào Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('685', NULL, '685', 'Nguyễn Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('686', NULL, '686', 'Lê Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('687', NULL, '687', 'Đào Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('688', NULL, '688', 'Đào Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('689', NULL, '689', 'Văn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('69', NULL, '69', 'Ngô Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('690', NULL, '690', 'Trần Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('691', NULL, '691', 'Lê Thị Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('692', NULL, '692', 'Trần Thị Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('693', NULL, '693', 'Đào Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('694', NULL, '694', 'Ngô Thị My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('695', NULL, '695', 'Nguyễn Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('696', NULL, '696', 'Đào Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('697', NULL, '697', 'Nguyễn Đức Xuân', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('698', NULL, '698', 'Đào Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('699', NULL, '699', 'Ngô Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('7', NULL, '7', 'Lê Xuân Nga', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('70', NULL, '70', 'Nguyễn Văn Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('700', NULL, '700', 'Ngô Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('701', NULL, '701', 'Nguyễn Xuân An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('702', NULL, '702', 'Văn Đức Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('703', NULL, '703', 'Lê Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('704', NULL, '704', 'Lê Phan Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('705', NULL, '705', 'Đào Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('706', NULL, '706', 'Trần Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('707', NULL, '707', 'Văn Thị Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('708', NULL, '708', 'Ngô Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('709', NULL, '709', 'Đào Thị Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('71', NULL, '71', 'Trần Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('710', NULL, '710', 'Nguyễn Xuân Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('711', NULL, '711', 'Nguyễn Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('712', NULL, '712', 'Nguyễn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('713', NULL, '713', 'Văn Xuân Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('714', NULL, '714', 'Lê Đức Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('715', NULL, '715', 'Trần Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('716', NULL, '716', 'Trần Phan An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('717', NULL, '717', 'Nguyễn Phan Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('718', NULL, '718', 'Nguyễn Xuân My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('719', NULL, '719', 'Nguyễn Văn Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('72', NULL, '72', 'Đào Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('720', NULL, '720', 'Trần Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('73', NULL, '73', 'Lê Phan Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('74', NULL, '74', 'Văn Đức Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('75', NULL, '75', 'Trần Đức Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('76', NULL, '76', 'Ngô Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('77', NULL, '77', 'Đào Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('78', NULL, '78', 'Lê Đức My', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('79', NULL, '79', 'Nguyễn Phan Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('8', NULL, '8', 'Đào Văn Long', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('80', NULL, '80', 'Lê Văn Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('81', NULL, '81', 'Trần Phan Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('82', NULL, '82', 'Văn Xuân Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('83', NULL, '83', 'Đào Đức Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('84', NULL, '84', 'Nguyễn Thị An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('85', NULL, '85', 'Trần Thị Nhi', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('86', NULL, '86', 'Ngô Văn Nga', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('87', NULL, '87', 'Trần Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('88', NULL, '88', 'Nguyễn Xuân Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('89', NULL, '89', 'Ngô Đức An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('9', NULL, '9', 'Lê Thị Như', NULL, NULL, NULL, NULL, 'GiangVien', NULL, NULL);
+INSERT INTO `users` VALUES ('90', NULL, '90', 'Đào Văn An', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('91', NULL, '91', 'Văn Đức Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('92', NULL, '92', 'Văn Thị Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('93', NULL, '93', 'Trần Phan Tình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('94', NULL, '94', 'Đào Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('95', NULL, '95', 'Nguyễn Văn Thảo', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('96', NULL, '96', 'Ngô Văn Long', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('97', NULL, '97', 'Lê Xuân Như', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('98', NULL, '98', 'Nguyễn Xuân Bình', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
+INSERT INTO `users` VALUES ('99', NULL, '99', 'Ngô Xuân Tú', NULL, NULL, NULL, NULL, 'SinhVien', NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
