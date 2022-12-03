@@ -10,7 +10,7 @@
     </head>
     <body>
         <a href="${pageContext.request.contextPath }"> Về trang chủ</a>
-        <h1>Thêm giảng viên cho ${tenHoiDong}</h1>
+        <h1>Thêm giảng viên cho Hội đồng </h1>
         <table>
             <th>Tên giảng viên</th>
             <th>Ngành</th>
@@ -22,7 +22,7 @@
                     <td> ${gv.fullname} </td>
                     <td> ${gv.nganh.tenNganh} </td>     
                     <td> 
-                        <a href="<c:url value="/Admin/DKHD?action=chonGV&maGV=${gv.username}"/>"> Chọn </a> 
+                        <a href="<c:url value="/Admin/DKHD?action=chonGV&maGiangVien=${gv.username}&hoiDongID=${hoiDongID}"/>"> Chọn </a> 
                     </td> 
                 </tr>
             </c:forEach>

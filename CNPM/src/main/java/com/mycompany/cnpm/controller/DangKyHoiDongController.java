@@ -68,24 +68,27 @@ public class DangKyHoiDongController extends HttpServlet {
         String maHoiDong = req.getParameter("maHoiDong");
 
         hoiDongService.xoaHoiDong(maHoiDong);
-        req.getRequestDispatcher("DangKyHoiDong.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/Admin");
 
     }
 
     protected void doGet_themGV(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-            req.setAttribute("giangViens", giangVienService.allGiangVien());
-        req.getRequestDispatcher("ThemGiaoVien.jsp").forward(req, resp);
+        String maHoiDong = req.getParameter("maHoiDong");
+        req.setAttribute("hoiDongID", maHoiDong);
+        req.setAttribute("giangViens", giangVienService.allGiangVienChuaCoHD());
+        req.getRequestDispatcher("ThemGiangVien.jsp").forward(req, resp);
 
     }
 
     protected void doGet_chonGV(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String userId = req.getParameter("maGV");
-        String hoiDongId = req.getParameter("maHoiDong");
-        req.getParameter("maGV");
-        giangVienService.themHoiDong(userId, hoiDongId);
-        doGet_Display(req, resp);
+        String userId = req.getParameter("maGiangVien");
+
+        String hoiDongID = req.getParameter("hoiDongID");
+        
+        giangVienService.themHoiDong(userId, hoiDongID);
+        
+        resp.sendRedirect(req.getContextPath() + "/Admin");
 
     }
 

@@ -17,6 +17,10 @@ public interface UserDao {
     User login(String userName, String password);
 
     List<User> getAllGiangVien();
+    
+    List<User> getAllGiangVienChuaCoHD();
 
     void themHoiDong(String userId,String hoiDongId);
+    
+    
 }

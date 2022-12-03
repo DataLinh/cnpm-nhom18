@@ -8,6 +8,8 @@ import com.mycompany.cnpm.dao.DeTaiDao;
 import com.mycompany.cnpm.dao.UserDao;
 import com.mycompany.cnpm.dao.impl.DeTaiDaoImpl;
 import com.mycompany.cnpm.dao.impl.UserDaoImpl;
+import com.mycompany.cnpm.service.GiangVienService;
+import com.mycompany.cnpm.service.impl.GiangVienServiceImpl;
 import com.mycompany.cnpm.until.HibernateUtil;
 import java.util.List;
 import java.util.Set;
@@ -19,19 +21,19 @@ import org.hibernate.Session;
  */
 public class Test {
 
-    public static void main(String[] args) {
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-//            Category c = session.get(Category.class, 2);
-//            System.out.println(c.getCategoryName());
+//    public static void main(String[] args) {
+//        try ( Session session = HibernateUtil.getFactory().openSession()) {
+////            Category c = session.get(Category.class, 2);
+////            System.out.println(c.getCategoryName());
+////
+////            Discount d = session.get(Discount.class, 2);
+////            System.out.println(d.getName());
+////
+//            GiangVienService a = new GiangVienServiceImpl();
+//            a.themHoiDong("7", "0");
 //
-//            Discount d = session.get(Discount.class, 2);
-//            System.out.println(d.getName());
-//
-    DeTaiDao deTaiDao = new DeTaiDaoImpl();
-            deTaiDao.themGVPB("DT004", "3");
-
-            session.close();
-        }
-    }
+//            session.close();
+//        }
+//    }
 
 }

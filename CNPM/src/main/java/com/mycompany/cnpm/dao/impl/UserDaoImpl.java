@@ -47,7 +47,18 @@ public class UserDaoImpl implements UserDao {
     public List<User> getAllGiangVien() {
         List<User> user = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-        user = session.createQuery("FROM User AS U WHERE U.role = 'GiangVien'").list();
+            user = session.createQuery("FROM User AS U WHERE U.role = 'GiangVien'").list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    @Override
+    public List<User> getAllGiangVienChuaCoHD() {
+        List<User> user = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+            user = session.createQuery("FROM User AS U WHERE (U.role = 'GiangVien' AND U.hoiDong IS NULL)").list();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,14 +68,22 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void themHoiDong(String userId, String hoiDongId) {
         User user = null;
-      try (Session session = HibernateUtil.getFactory().openSession()) {
-         user = session.get(User.class, userId);
-         HoiDong hoiDong = session.get(HoiDong.class, hoiDongId);
-         user.setHoiDong(hoiDong);
-         session.update(user);
-      } catch (Exception e) {
-         e.printStackTrace();
-      }
-    }
 
+        Transaction transaction = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+            transaction = session.beginTransaction();
+            user = session.get(User.class, userId);
+            HoiDong hoiDong = session.get(HoiDong.class, hoiDongId);
+            user.setHoiDong(hoiDong);
+            session.update(user);
+
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+
+    }
 }

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface GiangVienService {
     List<User> allGiangVien();
-    
+    List<User> allGiangVienChuaCoHD();
     
     void themHoiDong(String userId, String hoiDongId);
 }
