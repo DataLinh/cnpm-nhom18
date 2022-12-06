@@ -29,7 +29,7 @@ public class PhanQuyen implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         String url = req.getRequestURI();
-        if (url.contains("Login") || url.contains("Waiting")) {
+        if (url.contains("Login") || url.contains("Waiting")|| url.contains("Logout")) {
             chain.doFilter(request, response);
         } else {
             HttpSession session = req.getSession();

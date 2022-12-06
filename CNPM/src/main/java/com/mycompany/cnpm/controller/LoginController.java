@@ -42,19 +42,6 @@ public class LoginController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/Waiting");
             return;
         }
-        // Check cookie
-        Cookie[] cookies = req.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username")) {
-                    session = req.getSession(true);
-                    session.setAttribute("username", cookie.getValue());
-                    resp.sendRedirect(req.getContextPath() + "/Waiting");
-                    return;
-                }
-            }
-        }
-
         req.getRequestDispatcher("login.jsp").forward(req, resp);
     }
 

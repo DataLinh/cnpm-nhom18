@@ -1,4 +1,5 @@
 com\mycompany\cnpm\entities\Nganh.class
+com\mycompany\cnpm\controller\LogoutController.class
 com\mycompany\cnpm\controller\LoginController.class
 com\mycompany\cnpm\service\GiangVienService.class
 com\mycompany\cnpm\controller\GiangVienController.class

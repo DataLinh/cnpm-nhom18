@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Quản lý đề tài NCKH</title>
+        <title> Quản lý đề tài NCKH </title>
     </head>
     <body>
         <div class="container col-md-8 col-md-offset-3" style="overflow: auto">
@@ -30,7 +30,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Đăng nhập</button>
             </form>
         </div>
     </body>

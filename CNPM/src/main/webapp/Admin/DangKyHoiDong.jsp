@@ -9,6 +9,7 @@
         <title> Đăng ký hội đồng</title>
     </head>
     <body>
+        <a href="${pageContext.request.contextPath }/Logout"> Đăng xuất</a> <br>
         <a href="${pageContext.request.contextPath }"> Về trang chủ</a>
         <h1>Tạo hội đồng</h1>
         <form name="Tạo hội đồng" action="DKHD" method="POST">

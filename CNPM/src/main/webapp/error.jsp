@@ -4,15 +4,17 @@
     Author     : Linh
 --%>
 
-<%@page contentType="text/html" pageEncoding="windows-1252"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title> ERROR PAGE </title>
+        <title> Đã có lỗi xảy ra! </title>
     </head>
     <body>
-        <h1>LOI RUI</h1>
+        <h1>Đã có lỗi xảy ra, chúng tôi sẽ hoàn thiện trong thời gian tới!</h1>
         <% String error = (String) request.getParameter("ERROR");%>
         <h2> <%= error %> </h2>
         <h2> <a href ="login.jsp"> Back </a>    </h2> 
