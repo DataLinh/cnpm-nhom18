@@ -65,11 +65,6 @@
             <br>
             <a href="${pageContext.request.contextPath }/Admin/DKHD"> Đăng ký hội đồng mới</a>
             <a href="${pageContext.request.contextPath }/Admin/DKHD?action=suaHoiDong"> Chỉnh sửa hội đồng</a>
-            <a href="#"> Tạo đợt đăng ký sinh viên</a>
-            <a href="#"> Tạo đợt đăng ký giảng viên</a>
-            <a href="${pageContext.request.contextPath }/Admin/DKHD?action=suaHoiDong"> Phân đề tài theo bộ môn</a>
-
+            <a href="${pageContext.request.contextPath }/Admin/XemDeTai"> Phân đề tài theo bộ môn</a>
 
         </div>
-            
-        <div class="main">

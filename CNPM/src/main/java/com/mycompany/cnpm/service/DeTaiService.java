@@ -15,6 +15,8 @@ import java.util.List;
 public interface DeTaiService {
 
     List<DeTai> getAllDeTai();
+    
+    List<DeTai> getAllByNganh( String maNganh);
 
     void themGVPB(String maDeTai, String maGiangVien);
 

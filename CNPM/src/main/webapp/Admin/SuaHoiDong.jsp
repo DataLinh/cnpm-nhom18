@@ -29,28 +29,29 @@
             color: white;
         }
     </style>
-</head>
 
-<h1>Danh sách Hội đồng</h1>
-<table id="customers">
-    <th>Mã hội đồng</th>
-    <th>Tên hội đồng</th>
-    <th></th>           
-    <th></th>
-    <c:forEach items="${hoiDongs}" var ="hd">
-    <tr> 
-        <td> ${hd.maHoiDong} </td>
-        <td> ${hd.tenHoiDong} </td>     
-        <td> 
-            <a href="<c:url value="/Admin/DKHD?action=xoaHD&maHoiDong=${hd.maHoiDong}"/>">Xóa</a> 
-        </td> 
-        <td> 
-            <a href="<c:url value="/Admin/DKHD?action=themGV&maHoiDong=${hd.maHoiDong}"/>">Thêm Giảng Viên</a> 
-        </td> 
-    </tr>
-</c:forEach>
+    <div class="main">
 
-</table>
-</div>
+        <h1>Danh sách Hội đồng</h1>
+        <table id="customers">
+            <th>Mã hội đồng</th>
+            <th>Tên hội đồng</th>
+            <th></th>           
+            <th></th>
+            <c:forEach items="${hoiDongs}" var ="hd">
+            <tr> 
+                <td> ${hd.maHoiDong} </td>
+                <td> ${hd.tenHoiDong} </td>     
+                <td> 
+                    <a href="<c:url value="/Admin/DKHD?action=xoaHD&maHoiDong=${hd.maHoiDong}"/>">Xóa</a> 
+                </td> 
+                <td> 
+                    <a href="<c:url value="/Admin/DKHD?action=themGV&maHoiDong=${hd.maHoiDong}"/>">Thêm Giảng Viên</a> 
+                </td> 
+            </tr>
+        </c:forEach>
+
+    </table>
+    </div>
 </body>
 </html>

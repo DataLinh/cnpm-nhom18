@@ -7,8 +7,10 @@ package com.mycompany.cnpm.controller;
 import com.mycompany.cnpm.service.HoiDongService;
 import com.mycompany.cnpm.entities.HoiDong;
 import com.mycompany.cnpm.service.GiangVienService;
+import com.mycompany.cnpm.service.NganhService;
 import com.mycompany.cnpm.service.impl.GiangVienServiceImpl;
 import com.mycompany.cnpm.service.impl.HoiDongServiceImpl;
+import com.mycompany.cnpm.service.impl.NganhServiceImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +36,6 @@ public class DangKyHoiDongController extends HttpServlet {
             doGet_Display(request, response);
         } else if (action.equalsIgnoreCase("taoHoiDong")) {
             doPost_taoHoiDong(request, response);
-
         } else {
             doGet_Display(request, response);
 
@@ -85,9 +86,9 @@ public class DangKyHoiDongController extends HttpServlet {
         String userId = req.getParameter("maGiangVien");
 
         String hoiDongID = req.getParameter("hoiDongID");
-        
+
         giangVienService.themHoiDong(userId, hoiDongID);
-        
+
         resp.sendRedirect(req.getContextPath() + "/Admin");
 
     }

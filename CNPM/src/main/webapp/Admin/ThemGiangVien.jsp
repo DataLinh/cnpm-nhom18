@@ -30,23 +30,24 @@
         }
     </style>
 
-    <h1>Thêm giảng viên cho Hội đồng </h1>
-    <table id="customers">
-        <th>Tên giảng viên</th>
-        <th>Ngành</th>
-        <th></th>
+    <div class="main">
+        <h1>Thêm giảng viên cho Hội đồng </h1>
+        <table id="customers">
+            <th>Tên giảng viên</th>
+            <th>Ngành</th>
+            <th></th>
 
-    <c:forEach items="${giangViens}" var ="gv">
-        <tr> 
-            <td> ${gv.fullname} </td>
-            <td> ${gv.nganh.tenNganh} </td>     
-            <td> 
-                <a href="<c:url value="/Admin/DKHD?action=chonGV&maGiangVien=${gv.username}&hoiDongID=${hoiDongID}"/>"> Chọn </a> 
-            </td> 
-        </tr>
-    </c:forEach>
+        <c:forEach items="${giangViens}" var ="gv">
+            <tr> 
+                <td> ${gv.fullname} </td>
+                <td> ${gv.nganh.tenNganh} </td>     
+                <td> 
+                    <a href="<c:url value="/Admin/DKHD?action=chonGV&maGiangVien=${gv.username}&hoiDongID=${hoiDongID}"/>"> Chọn </a> 
+                </td> 
+            </tr>
+        </c:forEach>
 
-</table>
+    </table>
 </div>
 </body>
 </html>

@@ -34,6 +34,16 @@ public class DeTaiDaoImpl implements DeTaiDao {
         }
         return deTai;
     }
+    public List<DeTai> getAllByNganh(String maNganh) {
+        List<DeTai> deTai = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+           
+            deTai=  session.createQuery("Select d FROM DeTai d Where d.nganh.maNganh = :maNganh").setParameter("maNganh", maNganh).list();            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return deTai;
+    }
 
     @Override
     public void themGVPB(String maDeTai, String maGiangVien) {

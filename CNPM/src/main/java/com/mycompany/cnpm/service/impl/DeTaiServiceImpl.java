@@ -18,17 +18,17 @@ import java.util.List;
  * @author Linh
  */
 public class DeTaiServiceImpl implements DeTaiService {
-    
+
     DeTaiDao deTaiDao = new DeTaiDaoImpl();
-    
+
     @Override
     public List<DeTai> getAllDeTai() {
         List<DeTai> deTai = deTaiDao.getAll();
         return deTai;
     }
-    
+
     @Override
-    public  void themGVPB(String maDeTai, String maGiangVien) {
+    public void themGVPB(String maDeTai, String maGiangVien) {
         deTaiDao.themGVPB(maDeTai, maGiangVien);
     }
 
@@ -36,6 +36,11 @@ public class DeTaiServiceImpl implements DeTaiService {
     public List<User> getAllGiangVien() {
         UserDao userDao = new UserDaoImpl();
         return userDao.getAllGiangVien();
+    }
+
+    @Override
+    public List<DeTai> getAllByNganh(String maNganh) {
+        return deTaiDao.getAllByNganh(maNganh);
     }
     
 }

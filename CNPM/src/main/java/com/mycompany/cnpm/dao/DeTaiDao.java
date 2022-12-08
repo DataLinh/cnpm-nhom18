@@ -12,7 +12,8 @@ import java.util.List;
  * @author Linh
  */
 public interface DeTaiDao {
-    List<DeTai> getAll();
+    List<DeTai> getAll();   
+    List<DeTai> getAllByNganh( String maNganh);
     
     void themGVPB(String maDeTai, String maGiangVien);
 }
