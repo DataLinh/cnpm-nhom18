@@ -9,6 +9,7 @@ com\mycompany\cnpm\service\LoginService.class
 com\mycompany\cnpm\filter\PhanQuyen.class
 com\mycompany\cnpm\entities\LoaiDeTai.class
 com\mycompany\cnpm\service\HoiDongService.class
+com\mycompany\cnpm\controller\ErrorHandlingController.class
 com\mycompany\cnpm\controller\DangKyHoiDongController.class
 com\mycompany\cnpm\controller\TruongBoMonController.class
 com\mycompany\cnpm\controller\WaitingController.class

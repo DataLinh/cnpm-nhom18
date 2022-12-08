@@ -28,12 +28,7 @@ public class HibernateUtil {
         conf.configure("hibernate.cfg.xml");
 
         conf.addAnnotatedClass(LoaiDeTai.class);
-        
-        
-        conf.addAnnotatedClass(Nganh.class);
-        
-        
-        
+        conf.addAnnotatedClass(Nganh.class);    
         conf.addAnnotatedClass(HoiDong.class);
         conf.addAnnotatedClass(User.class);
         conf.addAnnotatedClass(DeTai.class);

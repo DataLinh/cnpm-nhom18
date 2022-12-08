@@ -6,62 +6,56 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ include file="TruongBoMon/tbmNav.jsp" %>
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title> Trưởng bộ môn </title>
-    <style>
-        #customers {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
 
-        #customers td, #customers th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
+    #customers tr:nth-child(even){
+        background-color: #f2f2f2;
+    }
 
-        #customers tr:nth-child(even){
-            background-color: #f2f2f2;
-        }
+    #customers tr:hover {
+        background-color: #ddd;
+    }
 
-        #customers tr:hover {
-            background-color: #ddd;
-        }
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+<body>
+    <table  id="customers">
+        <th>Mã đề tài</th>
+        <th>GVHD</th>
+        <th>GV Phản Biện</th>
+            <c:forEach items="${deTai}" var ="d">
+            <tr> 
+                <td> ${d.maDeTai} </td>
+                <td> ${d.gvHuongDan.fullname} </td>
+                <td>
+                    <c:if test="${d.gvPhanBien!=null}">
+                        ${d.gvPhanBien.fullname}
+                    </c:if>
+                    <c:if test="${d.gvPhanBien==null}">
+                        <a href="<c:url value="/TruongBoMon/DKGV?maDeTai=${d.maDeTai}"/>">Đăng ký giảng viên phản biện</a>
+                    </c:if>
+                </td>    
+            </tr>
+        </c:forEach>
 
-        #customers th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #04AA6D;
-            color: white;
-        }
-    </style>
-    <body>
-        <a href="${pageContext.request.contextPath }/Logout"> Đăng xuất</a>
-        <h1> Trưởng bộ môn </h1>
-        <table  id="customers">
-            <th>Mã đề tài</th>
-            <th>GVHD</th>
-            <th>GV Phản Biện</th>
-                <c:forEach items="${deTai}" var ="d">
-                <tr> 
-                    <td> ${d.maDeTai} </td>
-                    <td> ${d.gvHuongDan.fullname} </td>
-                    <td>
-                        <c:if test="${d.gvPhanBien!=null}">
-                            ${d.gvPhanBien.fullname}
-                        </c:if>
-                        <c:if test="${d.gvPhanBien==null}">
-                            <a href="<c:url value="/TruongBoMon/DKGV?maDeTai=${d.maDeTai}"/>">Đăng ký giảng viên phản biện</a>
-                        </c:if>
-                    </td>    
-                </tr>
-            </c:forEach>
-
-        </table>
-
-    </body>
+    </table>
+</div>
+</body>
 </html>
