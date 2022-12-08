@@ -63,7 +63,5 @@
             <br><br><br><br><br><br>
             <img src="${pageContext.request.contextPath }/img/logo.png" alt="logo" width="100px" >
             <br>
-
-
         </div>
 

@@ -29,7 +29,7 @@
         color: white;
     }
 </style>
-<body>
+    <div class="main">
     <table  id="customers">
         <th>Mã đề tài</th>
         <th>GVHD</th>
