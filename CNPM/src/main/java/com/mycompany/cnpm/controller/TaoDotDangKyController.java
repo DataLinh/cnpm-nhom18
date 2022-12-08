@@ -4,6 +4,11 @@
  */
 package com.mycompany.cnpm.controller;
 
+import com.mycompany.cnpm.service.HoiDongService;
+import com.mycompany.cnpm.entities.HoiDong;
+import com.mycompany.cnpm.service.GiangVienService;
+import com.mycompany.cnpm.service.impl.GiangVienServiceImpl;
+import com.mycompany.cnpm.service.impl.HoiDongServiceImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Linh
  */
-@WebServlet("/Admin")
-public class AdminController extends HttpServlet {
+@WebServlet("/Admin/TDDK")
+public class TaoDotDangKyController extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("Admin/DKHD?action=suaHoiDong").forward(req, resp);
-    }
+    
 }

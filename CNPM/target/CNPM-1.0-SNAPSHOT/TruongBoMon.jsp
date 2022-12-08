@@ -40,6 +40,7 @@
         <th>Mã đề tài</th>
         <th>GVHD</th>
         <th>GV Phản Biện</th>
+        <th>Sinh viên làm đề tài</th>
             <c:forEach items="${deTai}" var ="d">
             <tr> 
                 <td> ${d.maDeTai} </td>
@@ -51,7 +52,8 @@
                     <c:if test="${d.gvPhanBien==null}">
                         <a href="<c:url value="/TruongBoMon/DKGV?maDeTai=${d.maDeTai}"/>">Đăng ký giảng viên phản biện</a>
                     </c:if>
-                </td>    
+                </td>   
+                <td> ${d.sinhVien.fullname} </td>
             </tr>
         </c:forEach>
 

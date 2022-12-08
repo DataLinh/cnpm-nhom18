@@ -50,7 +50,7 @@ public class DeTai {
 
     @OneToOne
     @JoinColumn(name = "maSinhVien")
-    private User maSinhVien;
+    private User sinhVien;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maHoiDong")
@@ -126,19 +126,6 @@ public class DeTai {
         this.gvPhanBien = gvPhanBien;
     }
 
-    /**
-     * @return the maSinhVien
-     */
-    public User getMaSinhVien() {
-        return maSinhVien;
-    }
-
-    /**
-     * @param maSinhVien the maSinhVien to set
-     */
-    public void setMaSinhVien(User maSinhVien) {
-        this.maSinhVien = maSinhVien;
-    }
 
     /**
      * @return the hoiDong
@@ -153,5 +140,20 @@ public class DeTai {
     public void setHoiDong(HoiDong hoiDong) {
         this.hoiDong = hoiDong;
     }
+
+    /**
+     * @return the sinhVien
+     */
+    public User getSinhVien() {
+        return sinhVien;
+    }
+
+    /**
+     * @param sinhVien the sinhVien to set
+     */
+    public void setSinhVien(User sinhVien) {
+        this.sinhVien = sinhVien;
+    }
+
 
 }

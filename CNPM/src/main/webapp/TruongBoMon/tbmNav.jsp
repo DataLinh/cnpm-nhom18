@@ -63,8 +63,6 @@
             <br><br><br><br><br><br>
             <img src="${pageContext.request.contextPath }/img/logo.png" alt="logo" width="100px" >
             <br>
-<!--            <a href="${pageContext.request.contextPath }/Admin/DKHD"> Đăng ký hội đồng mới</a>
-            <a href="${pageContext.request.contextPath }/Admin/DKHD?action=suaHoiDong"> Chỉnh sửa hội đồng</a>-->
 
 
         </div>
