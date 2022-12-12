@@ -69,7 +69,7 @@ public class DangKyHoiDongController extends HttpServlet {
         String maHoiDong = req.getParameter("maHoiDong");
 
         hoiDongService.xoaHoiDong(maHoiDong);
-        resp.sendRedirect(req.getContextPath() + "/Admin");
+        resp.sendRedirect(req.getContextPath());
 
     }
 
@@ -89,7 +89,7 @@ public class DangKyHoiDongController extends HttpServlet {
 
         giangVienService.themHoiDong(userId, hoiDongID);
 
-        resp.sendRedirect(req.getContextPath() + "/Admin");
+        resp.sendRedirect(req.getContextPath());
 
     }
 
