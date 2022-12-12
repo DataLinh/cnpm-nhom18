@@ -35,7 +35,6 @@
             <th>Tên giảng viên</th>
             <th>Ngành</th>
             <th></th>
-            <th></th>
             <c:forEach items="${giangVien}" var ="gv">
             <tr> 
                 <td> ${gv.fullname} </td>
