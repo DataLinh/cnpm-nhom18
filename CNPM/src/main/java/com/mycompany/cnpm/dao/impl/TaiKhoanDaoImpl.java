@@ -46,23 +46,18 @@ public class TaiKhoanDaoImpl  implements TaiKhoanDao  {
 	        return users;
 	    }
 	    
-	  @Override
+	   @Override
 	    public void xoaTaiKhoan(User u) {
-	        Transaction transaction = null;
+		 org.hibernate.Transaction transaction = null;
 	        try ( Session session = HibernateUtil.getFactory().openSession()) {
-	            transaction = (Transaction) session.beginTransaction();
+	            transaction =  session.beginTransaction();
 	            session.delete(u);
 	            transaction.commit();
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	            if (transaction != null) {
-	                try {
+	               
 						transaction.rollback();
-					} catch (IllegalStateException | SystemException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-
 	            }
 	        }
 	    }
