@@ -66,5 +66,8 @@
             <a href="${pageContext.request.contextPath }/Admin/DKHD"> Đăng ký hội đồng mới</a>
             <a href="${pageContext.request.contextPath }/Admin/DKHD?action=suaHoiDong"> Chỉnh sửa hội đồng</a>
             <a href="${pageContext.request.contextPath }/Admin/XemDeTai"> Phân đề tài theo bộ môn</a>
+            <a href="${pageContext.request.contextPath }/Admin/TTK"> Tạo tài khoản </a>
+            <a href="${pageContext.request.contextPath }/Admin/TTK?action=suaTaiKhoan"> Chỉnh sửa tài khoản </a>
+            <a href="${pageContext.request.contextPath }/Admin/QLDeTaiSv"> Quản lý đề tài cho sinh viên  </a>
 
         </div>

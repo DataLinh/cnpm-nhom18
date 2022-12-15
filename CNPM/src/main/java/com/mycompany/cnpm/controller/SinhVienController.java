@@ -20,6 +20,15 @@ public class SinhVienController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("SinhVien.jsp").forward(req, resp);
+       
+       //req.getRequestDispatcher("QuanLyDeTaiSV.jsp").forward(req, resp);
+       String action = req.getParameter("action");
+       if (action == null) {
+           req.getRequestDispatcher("SinhVien.jsp").forward(req, resp);
+       }else if ( action.equalsIgnoreCase ("xem"))
+       {
+    	   req.getRequestDispatcher("QuanLyDeTaiSV.jsp").forward(req, resp);
+       }
     }
+    
 }
