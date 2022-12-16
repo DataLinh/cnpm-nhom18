@@ -29,11 +29,7 @@ import javax.servlet.http.HttpSession;
 public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private LoginService loginService;
-
-    public void init() {
-        loginService = new LoginServiceImpl();
-    }
+    private LoginService loginService = new LoginServiceImpl();
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

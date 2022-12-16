@@ -1,3 +1,4 @@
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\impl\TaiKhoanDaoImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\Test.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\DeTaiService.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\TaoDotDangKyController.java
@@ -6,6 +7,7 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\De
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\HoiDongService.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\LoginServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\LoaiDeTai.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\TaiKhoanServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\ErrorHandlingController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\DangKyGiangVienController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\NganhServiceImpl.java
@@ -13,6 +15,7 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\im
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\impl\UserDaoImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\User.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\Nganh.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\TaoTaiKhoanController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\XemDeTaiController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\GiangVienServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\impl\DeTaiDaoImpl.java
@@ -24,6 +27,7 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\servic
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\HoiDongServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\impl\DeTaiServiceImpl.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\UserDao.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\service\TaiKhoanService.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\entities\HoiDong.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\HoiDongDao.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\WaitingController.java
@@ -31,6 +35,8 @@ C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\servic
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\TruongBoMonController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\DangKyHoiDongController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\NganhDao.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\dao\TaiKhoanDao.java
+C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\QuanLyDeTaiSVController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\SinhVienController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\controller\GiangVienController.java
 C:\Users\Linh\Documents\cnpm-nhom18\CNPM\src\main\java\com\mycompany\cnpm\filter\PhanQuyen.java
