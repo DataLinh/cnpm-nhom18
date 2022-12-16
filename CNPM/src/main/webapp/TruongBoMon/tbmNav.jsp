@@ -63,5 +63,6 @@
             <br><br><br><br><br><br>
             <img src="${pageContext.request.contextPath }/img/logo.png" alt="logo" width="100px" >
             <br>
+            <a style="color: white; text-align: center;" href="${pageContext.request.contextPath }" > Trang Chủ  </a>
         </div>
 
